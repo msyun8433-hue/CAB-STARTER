@@ -1,0 +1,30 @@
+name: Update Session Dashboard
+
+on:
+  schedule:
+    - cron: '0 23 * * *'  # UTC 23:00 = KST 08:00 (다음날 아침)
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate dashboard
+        run: node automations/session-dashboard.mjs
+
+      - name: Copy to site
+        run: cp 하루끝-키트/현황판.html 하루끝-키트/사이트_레벨2/dashboard.html
+
+      - name: Commit and push
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add 하루끝-키트/사이트_레벨2/dashboard.html
+          git commit -m "chore: Update session dashboard [automated]" || true
+          git push

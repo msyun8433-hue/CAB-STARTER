@@ -160,6 +160,7 @@ const STYLE = `
   .wrap{ max-width:980px; margin:0 auto; padding:40px 24px 64px; }
   h1{ font-size:24px; font-weight:600; margin:0 0 4px; }
   .sub{ color:var(--muted); font-size:14px; margin:0 0 24px; }
+  .auto-update{ color:var(--accent); font-size:13px; margin:0 0 20px; font-weight:500; }
   .pipeline{ display:flex; flex-wrap:wrap; align-items:center; gap:6px; padding:12px 16px; background:#fff; border:1px solid var(--line); border-radius:14px; margin-bottom:20px; }
   .stage{ font-size:13px; padding:4px 10px; background:var(--bg); border-radius:8px; } .arrow{ color:var(--muted); font-size:12px; }
   .callout{ border-radius:16px; padding:16px 20px; margin-bottom:14px; }
@@ -255,6 +256,7 @@ export function renderHtml({ 오늘한일, 추천, 진도, 병목, 다음걸음,
 <body><div class="wrap">
   <h1>하루 끝 — 세션 현황판</h1>
   <p class="sub">상태 하나가 → 팔 수 있는 세션 한 벌이 되기까지. 오늘 뭐부터 할지 한 장.</p>
+  <p class="auto-update">🔄 매일 오전 8시에 자동으로 업데이트됩니다</p>
   <div class="pipeline">${stagesHtml}</div>
 
   <div class="callout today"><div class="lbl">오늘</div>
