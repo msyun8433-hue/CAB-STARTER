@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>이어, 나와 어울릴까?</title>
+<style>
+  :root{ --ink:#2b2b28; --soft:#5c574e; --muted:#9a9489; --line:#e3ddd2;
+    --paper:#faf8f3; --card:#ffffff; --accent:#b9784f; }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    line-height:1.85; letter-spacing:-0.01em; font-size:17px;
+    word-break:keep-all; overflow-wrap:break-word;
+    min-height:100vh; display:flex; align-items:center; justify-content:center;}
+  .wrap{max-width:560px; width:100%; padding:32px 22px;}
+  .brand{letter-spacing:.55em; color:var(--muted); font-size:13px; text-align:center; margin-bottom:22px;}
+
+  .screen{display:none;}
+  .screen.on{display:block; animation:fade .5s ease;}
+  @keyframes fade{from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:none;}}
+
+  .intro{text-align:center;}
+  .intro h1{font-size:30px; font-weight:600; margin:0 0 14px;}
+  .intro p{color:var(--soft); margin:0 0 32px;}
+
+  /* 진행 선 */
+  .track{height:3px; background:var(--line); border-radius:99px; margin-bottom:30px; overflow:hidden;}
+  .track i{display:block; height:100%; width:0; background:var(--accent); border-radius:99px; transition:width .5s ease;}
+
+  .qnum{color:var(--muted); font-size:13px; letter-spacing:.15em; text-align:center; margin-bottom:10px;}
+  .qtext{font-size:23px; font-weight:600; text-align:center; margin:0 0 28px; line-height:1.55;}
+
+  .opt{display:block; width:100%; text-align:left; background:var(--card);
+    border:1px solid var(--line); border-radius:14px; padding:17px 20px; margin:11px 0;
+    font-size:17px; color:var(--ink); cursor:pointer; transition:.15s;}
+  .opt:hover{border-color:var(--accent); transform:translateY(-1px);}
+  .opt.chosen{border-color:var(--accent); background:#fbf3ec;}
+  .opts.locked .opt{pointer-events:none; opacity:.45;}
+  .opts.locked .opt.chosen{opacity:1;}
+
+  /* 답하면 뜨는 비춤 한 줄 */
+  .mirror{min-height:30px; text-align:center; color:var(--accent); font-size:18px;
+    margin-top:22px; opacity:0; transition:opacity .5s ease; line-height:1.7;}
+  .mirror.on{opacity:1;}
+
+  .btn{display:inline-block; text-decoration:none; text-align:center; border-radius:12px;
+    padding:16px 24px; font-size:17px; cursor:pointer; border:1px solid var(--accent);
+    background:var(--accent); color:#fff; font-weight:600;}
+  .btn.ghost{background:transparent; color:var(--soft); border-color:var(--line); font-weight:400;}
+
+  .result{text-align:center;}
+  .ph{font-size:13px; letter-spacing:.2em; color:var(--muted);}
+  .pct{font-size:66px; font-weight:700; color:var(--accent); margin:8px 0 2px; letter-spacing:-.02em;}
+  .pct small{font-size:28px;}
+  .bar{height:10px; background:var(--line); border-radius:99px; overflow:hidden; margin:16px 0 26px;}
+  .bar i{display:block; height:100%; width:0; background:var(--accent); border-radius:99px; transition:width 1.1s ease;}
+  .rhead{font-size:24px; font-weight:600; margin:14px 0 10px;}
+  .rbody{color:var(--soft); margin:0 0 30px;}
+  .actions{display:flex; flex-direction:column; gap:12px;}
+  .foot{color:var(--muted); font-size:13px; margin-top:26px; text-align:center;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">이 어</div>
+
+  <section class="screen on intro" id="intro">
+    <h1>이어, 나와 어울릴까?</h1>
+    <p>여섯 장면을 보여드릴게요. 가장 나 같은 걸 툭 고르면 돼요.<br>다 보고 나면, 당신과 이어가 얼마나 가까운지 알려드릴게요.</p>
+    <button class="btn" onclick="start()">시작하기</button>
+  </section>
+
+  <section class="screen" id="quiz">
+    <div class="track"><i id="track"></i></div>
+    <div class="qnum" id="qnum"></div>
+    <div class="qtext" id="qtext"></div>
+    <div class="opts" id="opts"></div>
+    <div class="mirror" id="mirror"></div>
+  </section>
+
+  <section class="screen result" id="result">
+    <div class="ph">이어와의 어울림</div>
+    <div class="pct"><span id="pctNum">0</span><small>%</small></div>
+    <div class="bar"><i id="bar"></i></div>
+    <div class="rhead" id="rhead"></div>
+    <div class="rbody" id="rbody"></div>
+    <div class="actions">
+      <a class="btn" id="cta" href="session.html">첫 세션 시작하기 (무료)</a>
+      <button class="btn ghost" onclick="location.reload()">다시 해보기</button>
+    </div>
+    <div class="foot">이어 · 하루 끝, 나에게</div>
+  </section>
+</div>
+
+<script>
+  // 높은 점수 = 이어와 어울림. 두 갈래 모두 높게: ① 통증(나와 멀어짐) ② 결(이미 아끼고 더 하고 싶음).
+  // 낮은 점수 = 내면에 관심이 없는 쪽(별생각 없음·안 끌림).
+  var Q = [
+    {q:"불을 끄고 누웠을 때, 나는…", m:"하루는 끝났는데, 머리는 잘 안 꺼지죠.", a:[
+      ["오늘 한 말이나 장면이 다시 떠오른다",3],
+      ["내일 할 일부터 떠오른다",2],
+      ["폰을 한참 더 들여다본다",2],
+      ["눕자마자 잠든다",0]]},
+    {q:"조용히 혼자 있는 시간이, 나에게는…", m:"혼자 있는 시간은, 비어 있는 시간과 달라요.", a:[
+      ["꼭 필요하고, 소중하다",3],
+      ["필요한데 어떻게 보낼지 모르겠다",3],
+      ["가끔 허전하게 느껴진다",2],
+      ["별로 중요하지 않다",0]]},
+    {q:"문득 거울 속 내 얼굴을 보면…", m:"내 얼굴을 가만히 보는 일, 의외로 드물죠.", a:[
+      ["가끔 낯설다",3],
+      ["그날의 내 표정이 보인다",3],
+      ["피곤해 보인다는 생각뿐",2],
+      ["별생각 없다",0]]},
+    {q:"작고 사소한 순간이…", m:"작은 순간일수록, 더 빨리 흐려져요.", a:[
+      ["오래 마음에 남는 편이다",3],
+      ["남기고 싶은데 금세 흐려진다",3],
+      ["가끔 마음에 남는다",2],
+      ["별로 남지 않는다",0]]},
+    {q:"나에 대해 글로 적어보는 건…", m:"쓰고 싶은 마음과, 쓰는 방법은 다른 거예요.", a:[
+      ["이미 즐겨 하는 편이다",3],
+      ["해보고 싶은데 방법을 모르겠다",3],
+      ["며칠 하다 끊기곤 한다",2],
+      ["별로 끌리지 않는다",0]]},
+    {q:"요즘 마음 깊은 곳에서 바라는 건…", m:"바라는 걸 알아차리는 것부터가, 시작이에요.", a:[
+      ["나와 더 가까워지는 것",3],
+      ["잠깐이라도 조용한 내 시간",3],
+      ["그냥 덜 피곤한 것",1],
+      ["딱히 없다",0]]}
+  ];
+  var MAX = Q.reduce(function(s,x){return s+Math.max.apply(null,x.a.map(function(o){return o[1];}));},0);
+  var i=0, score=0;
+
+  function start(){ i=0; score=0; show('quiz'); render(); }
+  function show(id){ document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('on');}); document.getElementById(id).classList.add('on'); window.scrollTo(0,0); }
+
+  function render(){
+    document.getElementById('track').style.width = Math.round(i/Q.length*100)+'%';
+    document.getElementById('qnum').textContent=(i+1)+' / '+Q.length;
+    document.getElementById('qtext').textContent=Q[i].q;
+    var box=document.getElementById('opts'); box.className='opts'; box.innerHTML='';
+    Q[i].a.forEach(function(opt,idx){
+      var b=document.createElement('button'); b.className='opt'; b.textContent=opt[0];
+      b.onclick=function(){ pick(opt[1], b); };
+      box.appendChild(b);
+    });
+    var mr=document.getElementById('mirror'); mr.className='mirror'; mr.textContent='';
+  }
+  function pick(v, btn){
+    score+=v;
+    document.getElementById('opts').classList.add('locked');
+    btn.classList.add('chosen');
+    var mr=document.getElementById('mirror'); mr.textContent=Q[i].m; mr.classList.add('on');
+    document.getElementById('track').style.width = Math.round((i+1)/Q.length*100)+'%';
+    setTimeout(function(){
+      i++;
+      if(i<Q.length) render();
+      else result();
+    }, 2800);
+  }
+
+  function result(){
+    var pct = Math.round(35 + (score/MAX)*63); if(pct>98) pct=98;
+    var head, body;
+    if(pct>=82){ head="이어와, 잘 어울려요."; body="하루 끝에 나에게 잠깐 돌아가는 이 시간이, 지금 당신에게 꽤 가까워 보여요."; }
+    else if(pct>=62){ head="한번 가볍게 머물러 보면 좋겠어요."; body="어울릴지 아닐지는 첫 세션이면 느껴져요. 무료니까 부담 없이 시작해 보세요."; }
+    else { head="지금 당장은, 급하지 않을지도 몰라요."; body="그래도 궁금하면 첫 세션은 무료로 열려 있어요. 어느 날 문득 생각나면 그때 와도 좋아요."; }
+    document.getElementById('rhead').textContent=head;
+    document.getElementById('rbody').textContent=body;
+    show('result');
+    var n=0, el=document.getElementById('pctNum');
+    var t=setInterval(function(){ n+=Math.max(1,Math.round(pct/28)); if(n>=pct){n=pct; clearInterval(t);} el.textContent=n; },30);
+    setTimeout(function(){ document.getElementById('bar').style.width=pct+'%'; },150);
+  }
+</script>
+</body>
+</html>

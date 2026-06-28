@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>하루 끝, 나에게 — 이어</title>
+<style>
+  :root{ --ink:#2b2b28; --soft:#5c574e; --muted:#9a9489; --line:#e3ddd2;
+    --paper:#faf8f3; --card:#ffffff; --accent:#b9784f; }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    line-height:1.9; letter-spacing:-0.01em; font-size:17px;
+    word-break:keep-all; overflow-wrap:break-word;}
+  .wrap{max-width:680px; margin:0 auto; padding:0 22px;}
+  header.hero{padding:78px 0 50px; text-align:center;}
+  .brand{letter-spacing:.55em; color:var(--muted); font-size:13px; margin-bottom:24px;}
+  h1{font-size:32px; font-weight:600; margin:0 0 12px; letter-spacing:.02em;}
+  .kicker{color:var(--accent); font-size:14px; letter-spacing:.1em; margin-bottom:8px;}
+  .tagline{color:var(--soft); font-size:18px; line-height:2;}
+  section{padding:32px 0; border-top:1px solid var(--line);}
+  h2{font-size:21px; font-weight:600; margin:0 0 6px;}
+  .lead{color:var(--soft); margin:4px 0 18px;}
+  .notice{background:#f1ede4; border-left:3px solid #cfc6b8; padding:14px 18px; color:var(--soft); font-size:15px; border-radius:0 8px 8px 0;}
+  .track{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin:14px 0;}
+  .track .t{font-weight:600;} .track .d{color:var(--muted); font-size:14px; margin-bottom:10px;}
+  audio{width:100%; margin-top:6px;}
+  .q{margin:22px 0 6px; font-weight:600; color:#3a362f;}
+  .q .num{color:#cfc6b8; margin-right:8px;}
+  .hint{color:var(--muted); font-size:14px; font-weight:400;}
+  textarea,input[type=text]{width:100%; border:1px solid var(--line); border-radius:10px;
+    padding:12px 14px; font-family:inherit; font-size:16px; color:var(--ink);
+    background:#fff; resize:vertical; line-height:1.8;}
+  textarea{min-height:72px;}
+  textarea:focus,input:focus{outline:none; border-color:var(--accent);}
+  .chips{display:flex; flex-wrap:wrap; gap:9px; margin:10px 0;}
+  .chip{border:1px solid var(--line); border-radius:999px; padding:7px 15px; cursor:pointer; user-select:none; background:#fff; font-size:15px; color:var(--soft);}
+  .chip.on{background:var(--accent); border-color:var(--accent); color:#fff;}
+  .two{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+  @media(max-width:520px){.two{grid-template-columns:1fr;}}
+  .downloads{display:flex; gap:12px; flex-wrap:wrap;}
+  .btn{display:inline-block; text-decoration:none; text-align:center; border-radius:10px; padding:13px 20px; font-size:16px; cursor:pointer; border:1px solid var(--line); background:#fff; color:var(--ink);}
+  .btn.line{flex:1; min-width:200px;}
+  .btn.primary{background:var(--accent); border-color:var(--accent); color:#fff; width:100%; font-weight:600; font-size:17px; padding:16px;}
+  .btn.primary:hover{opacity:.92;}
+  .save{position:fixed; right:16px; bottom:16px; background:#3a362f; color:#fff; font-size:13px; padding:8px 14px; border-radius:999px; opacity:0; transition:opacity .3s; pointer-events:none;}
+  .save.show{opacity:.9;}
+  .savebar{font-size:14px; padding:10px 14px; border-radius:10px; margin:0 0 16px; display:flex; align-items:center; gap:8px;}
+  .savebar.ok{background:#eef2e8; color:#566b41; border:1px solid #d8e0c8;}
+  .savebar.warn{background:#fbeee6; color:#9a5a35; border:1px solid #f0d6c2;}
+  .thanks{display:none; background:#f1ede4; border-radius:14px; padding:26px; text-align:center; color:var(--soft); line-height:2;}
+  .end{color:var(--soft); font-size:16px; line-height:2.1; margin:6px 0 26px; text-align:center;}
+  footer{padding:40px 0 70px; text-align:center; color:var(--muted); font-size:14px;}
+  .navlink{text-align:center; padding-top:8px;}
+  .navlink a{color:var(--muted); font-size:14px;}
+  details.fold{border-top:1px solid var(--line);}
+  details.fold>summary{list-style:none; cursor:pointer; padding:16px 2px; color:var(--soft); font-size:16px; display:flex; justify-content:space-between; align-items:center;}
+  details.fold>summary::-webkit-details-marker{display:none;}
+  details.fold>summary .chev{color:var(--muted); font-size:13px;}
+  details.fold:not([open])>summary .chev::after{content:"펼치기 +";}
+  details.fold[open]>summary .chev::after{content:"접기 −";}
+  details.fold .inner{padding:2px 2px 18px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="brand">이 어</div>
+    <div class="kicker">첫 세션 · 무료</div>
+    <h1>하루 끝, 나에게</h1>
+    <div class="tagline">나를 고쳐 쓰지 않고,<br>나와의 대화를 이어가는 시간.</div>
+  </header>
+
+  <section>
+    <div class="notice">
+      상담도 치료도 아니에요. 오늘을 고치려는 것도 아니고요.
+      몸의 감각과 짧은 글로, 나와의 대화를 이어가는 시간이에요. 불편하면 언제든 멈춰도 괜찮아요.
+    </div>
+  </section>
+
+  <!-- 워크북 먼저 (곁에 두고 듣기) -->
+  <section>
+    <h2>먼저, 워크북을 곁에 둡니다</h2>
+    <p class="lead">손으로 적고 싶으면 인쇄해서. 화면이 편하면 아래에 바로 적어도 돼요.</p>
+    <div class="downloads">
+      <a class="btn line" href="downloads/workbook.pdf" target="_blank" rel="noopener">📄 PDF (인쇄·손글씨)</a>
+      <a class="btn line" href="downloads/workbook-typing.docx" target="_blank" rel="noopener">📝 Word (타이핑)</a>
+    </div>
+  </section>
+
+  <!-- 오디오 -->
+  <section>
+    <h2>오디오를 켜고 시작합니다</h2>
+    <p class="lead">눈을 감고, 목소리에 따라가 보세요. 적는 건 그다음입니다.</p>
+    <div class="track">
+      <div class="t">하루 끝, 나에게 · 첫 세션</div>
+      <div class="d">눈을 감고, 천천히 따라오세요</div>
+      <audio controls preload="none" src="audio/session.m4a?v=2"></audio>
+    </div>
+  </section>
+
+  <!-- 적기 (워크북과 같은 번호) -->
+  <form id="form">
+  <section>
+    <h2>오늘의 나를 적어둡니다</h2>
+    <p class="lead">오디오 안내에 따라, 떠오른 것을 한 줄씩. 정답은 없습니다.</p>
+    <div class="savebar ok" id="savebar">✓ 자동 저장 켜짐 — 적는 내용은 이 기기에 저장돼요</div>
+
+    <div class="q"><span class="num">3</span>지금, 몸의 감각 <span class="hint">— 눌러서 고르기</span></div>
+    <div class="chips" id="chips">
+      <span class="chip">무거움</span><span class="chip">답답함</span><span class="chip">긴장</span>
+      <span class="chip">피로</span><span class="chip">무감각</span><span class="chip">따뜻함</span>
+      <span class="chip">가벼움</span><span class="chip">불안</span>
+    </div>
+    <input type="text" id="기타입력" placeholder="기타 — 직접 쓰기 (예: 어깨가 뻐근함)">
+    <input type="hidden" name="3_감각체크" id="감각체크">
+    <div class="q" style="font-weight:400; margin-top:14px">지금 내 몸이 한 단어로 말한다면</div>
+    <input type="text" name="3_한단어" placeholder="한 단어">
+
+    <div class="q"><span class="num">4</span>오늘 오래 남은 장면</div>
+    <textarea name="4_장면" placeholder="오늘 가장 오래 남은 장면은"></textarea>
+    <textarea name="4_감각" placeholder="그 장면을 떠올릴 때 몸에서 느껴지는 감각은"></textarea>
+    <textarea name="4_말" placeholder="그 장면이 나에게 말하고 있는 것은"></textarea>
+
+    <div class="q"><span class="num">5</span>내 안의 두 목소리 <span class="hint">— 둘 다 적어요</span></div>
+    <div class="two">
+      <textarea name="5_목소리A" placeholder="나는 지금…"></textarea>
+      <textarea name="5_목소리B" placeholder="하지만 사실 나는…"></textarea>
+    </div>
+
+    <div class="q"><span class="num">6</span>오늘의 한 문장</div>
+    <textarea name="6_한문장" placeholder="오늘의 나는…"></textarea>
+    <input type="text" name="6_느낌" placeholder="이 문장을 다시 읽었을 때 몸에서 느껴지는 것은">
+
+    <div class="q"><span class="num">7</span>내일의 작은 이어감</div>
+    <input type="text" name="7_내일행동" placeholder="내일 내가 나에게 건넬 작은 행동 하나 (예: 자기 전 한 문장 적기)">
+
+    <div class="q">✨ 오늘, 고마웠던 것 <span class="hint">— 떠오르는 만큼만. 없으면 비워둬도 괜찮아요</span></div>
+    <p class="lead" style="margin-top:0">구체적일수록 좋아요 — 누가·무엇을·왜까지. 뭉뚱그리면 잘 안 남아요.<br>
+    <span style="color:#566b41">좋은 예: "엄마가 내가 좋아하는 김치찌개를 손수 끓여주셔서 좋았다"</span><br>
+    <span style="color:#9a9489">약한 예: "가족에게 고마웠다", "밥 먹어서 감사"</span></p>
+    <input type="text" name="감사1" placeholder="예: 엄마가 내가 좋아하는 김치찌개를 손수 끓여주셔서 좋았다">
+    <input type="text" name="감사2" placeholder="예: 동료가 회의에서 내 의견을 콕 집어 '좋다'고 말해줬다" style="margin-top:10px">
+    <input type="text" name="감사3" placeholder="예: 버스가 막 떠나려다 기사님이 문을 다시 열어줬다" style="margin-top:10px">
+  </section>
+
+  <!-- 8. 다음 날 (평소엔 접힘 — 내일 펼쳐서) -->
+  <details class="fold">
+    <summary>🌙 다음 날, 다시 — 내일 펼쳐서 적어요 <span class="chev"></span></summary>
+    <div class="inner">
+      <div class="q">어제 적은 문장 중, 오늘도 남아 있는 것은</div>
+      <textarea name="8_남은것"></textarea>
+      <div class="q">그 문장을 오늘의 삶에서 10분만 살아본다면, 무엇을 할 수 있을까</div>
+      <textarea name="8_10분"></textarea>
+    </div>
+  </details>
+
+  <!-- 9. 베타 후기 (평소엔 접힘 — 참여자만 한 번) -->
+  <details class="fold">
+    <summary>베타 후기 — 참여자라면 딱 한 번만 <span class="chev"></span></summary>
+    <div class="inner">
+      <p class="lead" style="margin-top:0">평가가 아니라, 다음 도구를 더 잘 만들기 위한 기록이에요.</p>
+      <div class="q">어느 순간에 "나에게 조금 도착했다"는 느낌이 있었나요</div>
+      <textarea name="9_도착"></textarea>
+      <div class="q">어느 질문이 가장 오래 남았나요</div>
+      <input type="text" name="9_오래남은">
+      <div class="q">어색하거나 길게 느껴진 부분은</div>
+      <input type="text" name="9_어색">
+      <div class="q">돈을 내고 다시 쓴다면, 무엇이 있어야 충분할까요</div>
+      <input type="text" name="9_충분">
+      <div class="q">이 도구를 누구에게 추천하고 싶나요</div>
+      <input type="text" name="9_추천">
+    </div>
+  </details>
+
+  <!-- 보내기 -->
+  <section>
+    <h2>되비춰 받고 싶다면, 보내기</h2>
+    <div class="notice" style="margin-bottom:18px">
+      보내면, 당신의 말을 정돈해 비춰드려요. 답·조언·평가는 하지 않아요.
+      혼자 간직하고 싶으면, 그대로 두어도 돼요.
+    </div>
+    <div class="two">
+      <input type="text" name="이름" placeholder="이름 (또는 불리고 싶은 이름)">
+      <input type="text" name="연락처" placeholder="연락받을 곳 (이메일/카톡)">
+    </div>
+    <div style="height:14px"></div>
+    <button type="submit" class="btn primary">보내기</button>
+  </section>
+  </form>
+
+  <section id="mirror-section" style="display:none; border:none"></section>
+
+  <section style="border:none">
+    <div class="thanks" id="thanks">
+      보내주셔서 고맙습니다.<br>
+      당신의 말을 천천히 읽고, 곧 비춰 보내드릴게요.<br>
+      <a class="btn line" id="downMine" style="margin-top:16px; display:inline-block" href="#" target="_blank">내가 적은 것 내려받기</a>
+    </div>
+  </section>
+
+  <div class="end">
+    오늘의 기록은 해결책이 아니라 흔적입니다.<br>
+    이 흔적이 내일의 나에게 작은 방향이 되기를 바랍니다.
+  </div>
+
+  <footer>이어 · 하루 끝, 나에게</footer>
+</div>
+
+<div class="save" id="saveTag">저장됨 ✓</div>
+
+<!-- Mirror Feature Functions (Task 3) -->
+<script src="mirror-functions.js"></script>
+
+<script>
+  var ENDPOINT = "https://formsubmit.co/ajax/" + atob("bXN5dW44NDMzQGdtYWlsLmNvbQ==");
+  var KEY = 'haruEnd_기본_v1';
+  var form = document.getElementById('form');
+  var extra = document.getElementById('기타입력');
+  var picked = [];
+
+  function syncSensation(){
+    var v = picked.slice();
+    if(extra.value.trim()) v.push(extra.value.trim());
+    document.getElementById('감각체크').value = v.join(', ');
+  }
+  document.querySelectorAll('#chips .chip').forEach(function(c){
+    c.addEventListener('click', function(){
+      c.classList.toggle('on'); var t=c.textContent;
+      if(c.classList.contains('on')) picked.push(t);
+      else picked=picked.filter(function(x){return x!==t;});
+      syncSensation(); save();
+    });
+  });
+  extra.addEventListener('input', function(){ syncSensation(); save(); });
+
+  var saveTag=document.getElementById('saveTag'), tmr;
+  var savebar=document.getElementById('savebar');
+  function nowStr(){ return new Date().toLocaleTimeString('ko-KR',{hour:'2-digit',minute:'2-digit',second:'2-digit'}); }
+  function save(){
+    var d={}; new FormData(form).forEach(function(v,k){d[k]=v;});
+    d['_기타']=extra.value;
+    var ok=false;
+    try{ localStorage.setItem(KEY, JSON.stringify(d)); ok=(localStorage.getItem(KEY)!=null); }catch(e){ ok=false; }
+    if(ok){
+      savebar.className='savebar ok';
+      savebar.textContent='✓ 자동 저장됨 — 마지막 저장 '+nowStr();
+      saveTag.classList.add('show'); clearTimeout(tmr);
+      tmr=setTimeout(function(){saveTag.classList.remove('show');},1200);
+    } else {
+      savebar.className='savebar warn';
+      savebar.textContent='⚠ 이 브라우저에서는 자동 저장이 안 돼요. 다 적으면 [보내기]를 누르거나, 인터넷 링크로 열면 안전합니다.';
+    }
+  }
+  function load(){
+    try{
+      var d=JSON.parse(localStorage.getItem(KEY)||'{}');
+      Object.keys(d).forEach(function(k){ var el=form.elements[k]; if(el) el.value=d[k]; });
+      if(d['_기타']){ extra.value=d['_기타']; }
+      if(d['3_감각체크']){
+        var saved=d['3_감각체크'].split(', ').filter(Boolean);
+        document.querySelectorAll('#chips .chip').forEach(function(c){
+          if(saved.indexOf(c.textContent)>=0){ c.classList.add('on'); picked.push(c.textContent); }
+        });
+        syncSensation();
+      }
+    }catch(e){}
+  }
+  form.addEventListener('input', save);
+  load();
+  (function(){ // 처음 열 때 저장 가능 여부 확인
+    try{ localStorage.setItem('_t','1'); localStorage.removeItem('_t');
+      savebar.className='savebar ok'; savebar.textContent='✓ 자동 저장 켜짐 — 적는 내용은 이 기기에 저장돼요';
+    }catch(e){
+      savebar.className='savebar warn'; savebar.textContent='⚠ 이 브라우저에서는 자동 저장이 안 돼요. 인터넷 링크로 열면 안전합니다.';
+    }
+  })();
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    submitAndShowMirror();
+  });
+</script>
+</body>
+</html>

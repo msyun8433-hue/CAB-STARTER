@@ -1,0 +1,26 @@
+{
+  "_안내": "이 파일을 복사해 .mcp.json 으로 바꾸면, AI 가 내 도구(노션·Gmail·Supabase 등)를 직접 읽고 쓸 수 있어요. 필요한 것만 mcpServers 안에 남기고, 키는 .env 에 두고 여기선 이름만 참조해요.",
+  "mcpServers": {
+    "notion": {
+      "command": "npx",
+      "args": ["-y", "@notionhq/notion-mcp-server"],
+      "env": { "NOTION_API_KEY": "${NOTION_API_KEY}" }
+    }
+  },
+  "_다른_도구_예시": "↓ 아래 블록은 참고용이라 작동하지 않아요. 쓰려면 해당 항목을 위 mcpServers 안으로 옮기고, 키를 .env 에 넣으세요. 패키지명은 한 번 더 확인하고요(단톡에 물어봐도 돼요).",
+  "_참고_mcpServers": {
+    "gmail": {
+      "command": "npx",
+      "args": ["-y", "@gongrzhe/server-gmail-autoauth-mcp"]
+    },
+    "google-drive": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-gdrive"]
+    },
+    "supabase": {
+      "command": "npx",
+      "args": ["-y", "@supabase/mcp-server-supabase@latest", "--read-only"],
+      "env": { "SUPABASE_ACCESS_TOKEN": "${SUPABASE_ACCESS_TOKEN}" }
+    }
+  }
+}

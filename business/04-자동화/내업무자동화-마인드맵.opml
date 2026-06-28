@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 내 업무 자동화 마인드맵 · XMind 등에서 [파일 → 가져오기 → OPML] 로 열면 가지가 펼쳐집니다.
+     틀: "어떤 업무 → 순서 → AI가 할 수 있는 것 → 시각화 → 내보내기 전 점검" (윤미선 버전) -->
+<opml version="2.0">
+  <head>
+    <title>내가 자동화해야 할 업무 (마인드맵)</title>
+  </head>
+  <body>
+    <outline text="내가 자동화해야 할 업무">
+      <outline text="① 어떤 업무를 자동화 할 것인가?">
+        <outline text="✅ 세션 생산 라인 — 상태 하나 넣으면 → 질문지 + 오디오 대본 초안 + 결 점검 (팔 수 있는 세션 한 벌)">
+          <outline text="왜: 1순위가 출시. 돌릴 때마다 '제품 한 벌'이 나와야 함"/>
+          <outline text="왜: §0 — 내 몸 안 갈리게. 사람이 혼자 자기와 대화 이어가게"/>
+        </outline>
+        <outline text="대안으로 미뤄둔 것: AI 대화·자료 정리 (시간 절약엔 좋지만 끝에 '재료'만 남음 → 탐색 함정 위험)"/>
+      </outline>
+      <outline text="② 그 일을 순서대로 하면?">
+        <outline text="1. 상태 정하기 (꿈의 고객의 밤·저녁 통증에서)"/>
+        <outline text="2. 재료 모으기 (참고 영상·자막·읽은 글)"/>
+        <outline text="3. 질문지 초안"/>
+        <outline text="4. 오디오 대본 초안"/>
+        <outline text="5. AI 티 빼기 (사람 결로)"/>
+        <outline text="6. 결 점검 (금지어·과장·거울)"/>
+        <outline text="7. 녹음 · 발행"/>
+      </outline>
+      <outline text="③ 이 중 AI가 대신 할 수 있는 것?">
+        <outline text="재료 모으기 → YouTube API + 트랜스크립트 MCP"/>
+        <outline text="질문지·과제 초안 → [질문과제정리] 스킬"/>
+        <outline text="오디오 대본 초안 → [녹음대본] 스킬"/>
+        <outline text="AI 티 빼기 → [녹음대본] 스킬 규칙"/>
+        <outline text="결 점검 → [결다듬기] 스킬"/>
+        <outline text="✋ 내가 직접: 어떤 상태를 낼지 · 고객에게 닿는 최종 문장 · 녹음 목소리"/>
+      </outline>
+      <outline text="④ 어떤 결과를 시각적으로 보고 싶은가?">
+        <outline text="단계 보드(대시보드): 상태 → 재료 → 질문지 → 대본 → 다듬기 → 점검 → 발행 완료"/>
+        <outline text="저장 위치 (결과물이 어디 쌓이나)">
+          <outline text="정리 재료 → 자료함/정리/"/>
+          <outline text="세션(질문지+대본) → 하루끝-키트/outputs/"/>
+          <outline text="참고 영상 → 노션 '참고 유튜브 영상'"/>
+        </outline>
+      </outline>
+      <outline text="⑤ 내보내기 전에 확인할 것?">
+        <outline text="결다듬기: 금지어·과장 0"/>
+        <outline text="거울 원칙: 답·조언·위로 강요 없음"/>
+        <outline text="AI 티: 줄표 나열·대칭·정형 위로 없음"/>
+        <outline text="최종 문장은 내가 직접 골랐나"/>
+      </outline>
+    </outline>
+  </body>
+</opml>

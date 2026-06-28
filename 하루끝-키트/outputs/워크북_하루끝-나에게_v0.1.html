@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>하루 끝, 나에게 — 셀프 세션 워크북</title>
+<style>
+  @page {
+    size: A4;
+    margin: 22mm 20mm 20mm 20mm;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    font-family: "Apple SD Gothic Neo", "AppleSDGothicNeo", sans-serif;
+    color: #2b2b28;
+    line-height: 1.85;
+    font-size: 11pt;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  .page { page-break-after: always; }
+  .page:last-child { page-break-after: auto; }
+
+  /* 표지 */
+  .cover {
+    height: 247mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .cover .brand {
+    font-size: 12pt;
+    letter-spacing: 0.5em;
+    color: #9a9489;
+    margin-bottom: 28px;
+  }
+  .cover h1 {
+    font-size: 30pt;
+    font-weight: 600;
+    margin: 0 0 18px 0;
+    letter-spacing: 0.02em;
+  }
+  .cover .sub {
+    font-size: 12pt;
+    color: #6f6a61;
+    margin-bottom: 60px;
+  }
+  .cover .line {
+    font-size: 13pt;
+    color: #4a463f;
+    line-height: 2.1;
+  }
+  .cover .meta {
+    margin-top: auto;
+    font-size: 9.5pt;
+    color: #aaa499;
+    padding-top: 40px;
+  }
+
+  h2 {
+    font-size: 15pt;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+    color: #2b2b28;
+  }
+  h2 .num {
+    color: #b9b2a6;
+    font-weight: 600;
+    margin-right: 10px;
+  }
+  .section { margin-bottom: 26px; }
+  .lead { color: #5c574e; margin: 6px 0 16px 0; }
+  p { margin: 8px 0; }
+
+  .notice {
+    background: #f6f4ef;
+    border-left: 3px solid #c9c0b1;
+    padding: 16px 20px;
+    margin: 18px 0;
+    color: #5c574e;
+    font-size: 10.5pt;
+    line-height: 1.9;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 10.5pt;
+  }
+  th, td {
+    border: 1px solid #ddd7cb;
+    padding: 9px 12px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #f6f4ef;
+    font-weight: 600;
+    color: #4a463f;
+  }
+  .flow td:nth-child(1) { width: 18%; font-weight: 600; color: #4a463f; }
+  .flow td:nth-child(2) { width: 16%; color: #8a8478; }
+
+  .write-line {
+    border-bottom: 1px solid #d8d2c6;
+    height: 30px;
+    margin: 14px 0;
+  }
+  .q { margin: 18px 0 6px 0; color: #3a362f; }
+
+  .checks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    margin: 14px 0;
+  }
+  .checks span {
+    display: inline-flex;
+    align-items: center;
+    font-size: 11pt;
+    color: #4a463f;
+    width: 28%;
+  }
+  .box {
+    display: inline-block;
+    width: 14px; height: 14px;
+    border: 1.5px solid #b9b2a6;
+    border-radius: 3px;
+    margin-right: 9px;
+  }
+  .fill {
+    border-bottom: 1px solid #d8d2c6;
+    display: inline-block;
+    min-width: 220px;
+  }
+  .two-voices td { height: 90px; }
+  .footer-note {
+    margin-top: 30px;
+    color: #8a8478;
+    font-size: 10pt;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+
+<!-- 표지 -->
+<section class="page cover">
+  <div class="brand">이 어</div>
+  <h1>하루 끝, 나에게</h1>
+  <div class="sub">감각 · 기록 셀프 세션 워크북 · v0.1</div>
+  <div class="line">
+    나를 고쳐 쓰지 않고,<br>
+    나와의 대화를 이어가는 시간.
+  </div>
+  <div class="meta">
+    혼자 쓰는 감각 · 기록 도구 · 베타 참여자용<br>
+    함께 받은 오디오 안내와 같이 사용하세요.
+  </div>
+</section>
+
+<!-- 본문 1 -->
+<section class="page">
+
+  <div class="notice">
+    이 도구는 상담이나 치료가 아닙니다. 오늘 하루를 고치거나 평가하기보다,
+    몸의 감각과 짧은 글쓰기로 자기 자신과의 대화를 이어가는 작은 기록 도구입니다.
+    불편함이 느껴지면 언제든 멈추어도 괜찮습니다.
+  </div>
+
+  <div class="section">
+    <h2><span class="num">0</span>이 도구의 목적</h2>
+    <p class="lead">하루가 끝났는데도 내가 나와 연결되지 못한 느낌이 들 때가 있습니다.
+    이 세션은 더 잘 살기 위한 계획표가 아니라, 오늘의 몸과 마음이 남긴 작은 흔적을
+    조용히 읽어보는 시간입니다.</p>
+  </div>
+
+  <div class="section">
+    <h2><span class="num">1</span>준비물</h2>
+    <p class="lead">
+      방해받지 않는 25~30분 · 펜 한 자루 · 이 문서 또는 출력한 질문지 · 조용한 공간<br>
+      매트, 담요, 의자 중 편한 것. 매트가 없어도 괜찮습니다.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2><span class="num">2</span>오늘의 흐름</h2>
+    <table class="flow">
+      <tr><th>단계</th><th>시간</th><th>내용</th></tr>
+      <tr><td>문턱</td><td>3분</td><td>오늘의 역할과 속도를 잠시 내려놓기</td></tr>
+      <tr><td>감각</td><td>5분</td><td>몸의 무게, 긴장, 호흡, 온도 살피기</td></tr>
+      <tr><td>기록</td><td>7분</td><td>오늘 오래 남은 장면과 몸의 신호 적기</td></tr>
+      <tr><td>대화</td><td>7분</td><td>내 안의 두 목소리 써보기</td></tr>
+      <tr><td>이어감</td><td>5분</td><td>오늘의 한 문장과 내일의 작은 행동 정하기</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- 본문 2 -->
+<section class="page">
+  <div class="section">
+    <h2><span class="num">3</span>지금, 몸의 감각</h2>
+    <p class="lead">지금 몸에서 가장 먼저 느껴지는 곳에 표시해보세요. 정답은 없습니다. 자세히 설명하지 않아도 됩니다.</p>
+    <div class="checks">
+      <span><i class="box"></i>무거움</span>
+      <span><i class="box"></i>답답함</span>
+      <span><i class="box"></i>긴장</span>
+      <span><i class="box"></i>피로</span>
+      <span><i class="box"></i>무감각</span>
+      <span><i class="box"></i>따뜻함</span>
+      <span><i class="box"></i>가벼움</span>
+      <span><i class="box"></i>불안</span>
+      <span><i class="box"></i>기타</span>
+    </div>
+    <p class="q">지금 내 몸이 한 단어로 말한다면: <span class="fill" style="min-width:320px"></span></p>
+  </div>
+
+  <div class="section">
+    <h2><span class="num">4</span>오늘 오래 남은 장면</h2>
+    <p class="lead">오늘 하루 중 이상하게 오래 남는 장면 하나를 적어보세요. 큰 사건이 아니어도 됩니다.
+    표정, 말투, 창밖의 빛, 퇴근길, 문자 하나여도 됩니다.</p>
+    <p class="q">오늘 가장 오래 남은 장면은 무엇인가요?</p>
+    <div class="write-line"></div><div class="write-line"></div>
+    <p class="q">그 장면을 떠올릴 때 몸에서 느껴지는 감각은 무엇인가요?</p>
+    <div class="write-line"></div><div class="write-line"></div>
+    <p class="q">그 장면이 나에게 말하고 있는 것은 무엇일까요?</p>
+    <div class="write-line"></div><div class="write-line"></div>
+  </div>
+</section>
+
+<!-- 본문 3 -->
+<section class="page">
+  <div class="section">
+    <h2><span class="num">5</span>내 안의 두 목소리</h2>
+    <p class="lead">내 안에는 자주 서로 다른 목소리가 있습니다. 잘 버티는 나와 쉬고 싶은 나,
+    책임지는 나와 도망가고 싶은 나, 설명하는 나와 조용히 알고 있는 나.
+    오늘은 둘 중 하나를 고르지 않고, 둘 다 적어봅니다.</p>
+    <table class="two-voices">
+      <tr><th style="width:50%">목소리 A — “나는 지금…”</th><th style="width:50%">목소리 B — “하지만 나는 사실…”</th></tr>
+      <tr><td></td><td></td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2><span class="num">6</span>오늘의 한 문장</h2>
+    <p class="q">오늘의 나를 한 문장으로 적는다면?</p>
+    <p>오늘의 나는 <span class="fill" style="min-width:380px"></span></p>
+    <div class="write-line"></div>
+    <p class="q">이 문장을 다시 읽었을 때 몸에서 느껴지는 것은:</p>
+    <div class="write-line"></div>
+  </div>
+
+  <div class="section">
+    <h2><span class="num">7</span>내일의 작은 이어감</h2>
+    <p class="lead">이어는 큰 결심보다 작은 이어감을 중요하게 봅니다.
+    내일 10분 안에 할 수 있는 아주 작은 행동 하나만 정해보세요.</p>
+    <table>
+      <tr><th style="width:14%">영역</th><th style="width:46%">예시</th><th style="width:40%">내 선택</th></tr>
+      <tr><td>몸</td><td>창문 열고 3번 깊게 숨쉬기</td><td></td></tr>
+      <tr><td>기록</td><td>자기 전 한 문장 적기</td><td></td></tr>
+      <tr><td>관계</td><td>바로 답하지 않고 잠시 멈추기</td><td></td></tr>
+      <tr><td>공간</td><td>책상 위 한 곳만 정리하기</td><td></td></tr>
+      <tr><td>감각</td><td>차 한 잔을 천천히 마시기</td><td></td></tr>
+    </table>
+    <p class="q">내일 내가 나에게 건넬 작은 행동은: <span class="fill" style="min-width:300px"></span></p>
+  </div>
+
+  <div class="section">
+    <h2>✨ 오늘, 고마웠던 것</h2>
+    <p class="lead">떠오르는 만큼만. 없으면 비워둬도 괜찮습니다. 구체적일수록 좋아요 — 누가·무엇을·왜까지.
+    좋은 예: “엄마가 내가 좋아하는 김치찌개를 손수 끓여주셔서 좋았다”. (약한 예: “가족에게 고마웠다”처럼 뭉뚱그리면 잘 안 남아요)</p>
+    <p class="q">1. </p><div class="write-line"></div>
+    <p class="q">2. </p><div class="write-line"></div>
+    <p class="q">3. </p><div class="write-line"></div>
+  </div>
+</section>
+
+<!-- 본문 4 -->
+<section class="page">
+  <div class="section">
+    <h2><span class="num">8</span>24시간 후속 질문</h2>
+    <p class="lead">세션 다음 날, 아래 질문에 한 번 더 답해보세요.
+    이어짐은 한 번의 감동보다, 다음 날 다시 열어보는 작은 문에서 시작됩니다.</p>
+    <p class="q">어제 적은 문장 중 오늘도 남아 있는 것은 무엇인가요?</p>
+    <div class="write-line"></div><div class="write-line"></div>
+    <p class="q">그 문장을 오늘의 삶에서 10분만 살아본다면 무엇을 할 수 있을까요?</p>
+    <div class="write-line"></div><div class="write-line"></div>
+  </div>
+
+  <div class="section">
+    <h2><span class="num">9</span>피드백 질문</h2>
+    <p class="lead">베타 참여자라면 아래 질문에 답해주세요.
+    이것은 평가가 아니라, 다음 도구를 더 잘 만들기 위한 기록입니다.</p>
+    <p class="q">어느 순간에 “나에게 조금 도착했다”는 느낌이 있었나요?</p>
+    <div class="write-line"></div>
+    <p class="q">어느 질문이 가장 오래 남았나요?</p>
+    <div class="write-line"></div>
+    <p class="q">어색하거나 어렵거나 길게 느껴진 부분은 어디였나요?</p>
+    <div class="write-line"></div>
+    <p class="q">돈을 내고 다시 사용한다면, 무엇이 있어야 충분하다고 느낄까요?</p>
+    <div class="write-line"></div>
+    <p class="q">이 도구를 누구에게 추천하고 싶나요?</p>
+    <div class="write-line"></div>
+  </div>
+
+  <div class="section">
+    <h2><span class="num">10</span>마무리</h2>
+    <p class="lead">오늘의 기록은 해결책이 아니라 흔적입니다.
+    이 흔적이 내일의 나에게 작은 방향이 되기를 바랍니다.</p>
+    <p class="footer-note">— 이어 · 하루 끝, 나에게</p>
+  </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>하루 끝 — 세션 현황판</title>
+<style>
+  :root{ --bg:#f7f5f0; --ink:#2b2925; --muted:#8a8479; --line:#e3ded4; --accent:#6b7d6a; --accentbg:#eef1ea;
+    --warn:#c2742e; --warnbg:#fbf1e4; --warnline:#e9cfa8; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--ink); font-family:-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif; line-height:1.6; }
+  .wrap{ max-width:980px; margin:0 auto; padding:40px 24px 64px; }
+  h1{ font-size:24px; font-weight:600; margin:0 0 4px; }
+  .sub{ color:var(--muted); font-size:14px; margin:0 0 24px; }
+  .pipeline{ display:flex; flex-wrap:wrap; align-items:center; gap:6px; padding:12px 16px; background:#fff; border:1px solid var(--line); border-radius:14px; margin-bottom:20px; }
+  .stage{ font-size:13px; padding:4px 10px; background:var(--bg); border-radius:8px; } .arrow{ color:var(--muted); font-size:12px; }
+  .callout{ border-radius:16px; padding:16px 20px; margin-bottom:14px; }
+  .next{ background:var(--accentbg); border:1px solid #d4ddd0; } .sleep{ background:var(--warnbg); border:1px solid var(--warnline); }
+  .lbl{ font-size:12px; font-weight:600; margin-bottom:6px; } .next .lbl{ color:var(--accent); } .sleep .lbl{ color:var(--warn); }
+  .callout .body{ font-size:16px; }
+  .board{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:8px; }
+  .col{ background:#fff; border:1px solid var(--line); border-radius:14px; padding:16px 16px 20px; }
+  .col h2{ font-size:15px; font-weight:600; margin:0 0 2px; }
+  .count{ font-size:12px; color:#fff; background:var(--accent); border-radius:20px; padding:1px 9px; }
+  .hint{ font-size:12px; color:var(--muted); margin:0 0 12px; }
+  .item{ padding:9px 11px; border:1px solid var(--line); border-radius:10px; margin-bottom:8px; background:#fcfbf8; }
+  .item.stalled{ border-color:var(--warnline); background:var(--warnbg); }
+  .iname{ font-size:13.5px; } .ibadge{ font-size:11.5px; color:var(--muted); margin-top:3px; } .item.stalled .ibadge{ color:var(--warn); }
+  .empty{ font-size:13px; color:var(--muted); padding:8px 0; }
+  .tally{ display:flex; gap:12px; margin-top:22px; }
+  .tally .t{ flex:1; background:#fff; border:1px solid var(--line); border-radius:14px; padding:16px; text-align:center; }
+  .tally .n{ font-size:28px; font-weight:600; color:var(--accent); } .tally .k{ font-size:12px; color:var(--muted); margin-top:2px; }
+  .foot{ margin-top:26px; font-size:12px; color:var(--muted); text-align:center; }
+  .sec-title{ font-size:17px; font-weight:600; margin:36px 0 4px; }
+  .sec-sub{ font-size:13px; color:var(--muted); margin:0 0 14px; }
+  .lanes{ background:#fff; border:1px solid var(--line); border-radius:14px; overflow:hidden; }
+  .lane{ display:grid; grid-template-columns:108px 78px 1fr 130px 150px; gap:10px; align-items:center; padding:12px 16px; border-top:1px solid var(--line); font-size:13px; }
+  .lane:first-child{ border-top:none; }
+  .lane-step{ font-weight:600; }
+  .lane-who{ font-size:12px; padding:2px 8px; border-radius:20px; text-align:center; white-space:nowrap; }
+  .lane-who.me{ background:#fbf1e4; color:var(--warn); } .lane-who.ai{ background:var(--accentbg); color:var(--accent); }
+  .lane-who.both{ background:#eee9df; color:#6a6258; }
+  .lane-what{ color:var(--ink); }
+  .chip{ font-size:12px; background:var(--bg); border:1px solid var(--line); border-radius:7px; padding:2px 8px; }
+  .lane-save{ font-size:12px; color:var(--muted); }
+  .dash{ color:#c9c2b4; }
+  .lane-head{ font-size:11px; color:var(--muted); font-weight:600; background:var(--bg); }
+  .checks{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .check{ display:grid; grid-template-columns:22px 1fr; grid-template-rows:auto auto; column-gap:10px; align-items:center;
+    background:#fff; border:1px solid var(--line); border-radius:12px; padding:14px 16px; cursor:pointer; }
+  .check input{ grid-row:1/3; width:20px; height:20px; accent-color:var(--accent); cursor:pointer; }
+  .check-k{ font-size:14px; font-weight:600; } .check-d{ font-size:12px; color:var(--muted); }
+  .check input:checked ~ .check-k{ color:var(--accent); }
+  .check:has(input:checked){ background:var(--accentbg); border-color:#d4ddd0; }
+  .check-reset{ margin-top:10px; font-size:12px; color:var(--muted); background:none; border:none; cursor:pointer; text-decoration:underline; }
+  @media(max-width:760px){ .board{grid-template-columns:1fr;} .tally{flex-direction:column;} .checks{grid-template-columns:1fr;}
+    .lane{ grid-template-columns:1fr 1fr; row-gap:4px; } .lane-what{ grid-column:1/3; } .lane-head{ display:none; } }
+  .today{ background:#eef1ea; border:1px solid #d4ddd0; }
+  .today-row{ display:flex; gap:12px; font-size:15px; margin-top:4px; }
+  .today-k{ min-width:96px; color:var(--accent); font-weight:600; }
+  .adv{ background:#fbf7ee; border:1px solid #ecdcc0; } .adv .lbl{ color:var(--warn); }
+  .adv-line{ font-size:15px; margin-top:2px; }
+  .prows{ background:#fff; border:1px solid var(--line); border-radius:14px; padding:8px 16px; }
+  .prow{ display:grid; grid-template-columns:140px auto 1fr; gap:12px; align-items:center; padding:8px 0; border-top:1px solid var(--line); font-size:13px; }
+  .prow:first-child{ border-top:none; } .prow.stalled .plabel{ color:var(--warn); }
+  .pname{ font-weight:600; } .pbar{ font-family:monospace; letter-spacing:2px; color:var(--accent); } .plabel{ color:var(--muted); }
+  .brows{ background:#fff; border:1px solid var(--line); border-radius:14px; padding:12px 16px; }
+  .brow{ display:grid; grid-template-columns:48px 1fr 32px; gap:10px; align-items:center; margin:6px 0; font-size:13px; }
+  .bk{ color:var(--muted); } .bn{ text-align:right; font-weight:600; }
+  .bbar{ height:14px; border-radius:7px; background:var(--accentbg); position:relative; }
+  .bbar::after{ content:''; position:absolute; left:0; top:0; bottom:0; width:var(--w); background:var(--accent); border-radius:7px; }
+  .brate{ font-size:12px; color:var(--muted); text-align:right; margin-top:6px; }
+  details.fold{ background:#fff; border:1px solid var(--line); border-radius:14px; margin-top:14px; padding:4px 16px; }
+  details.fold summary{ cursor:pointer; font-size:15px; font-weight:600; padding:12px 0; }
+  details.fold[open] summary{ border-bottom:1px solid var(--line); margin-bottom:12px; }
+</style></head>
+<body><div class="wrap">
+  <h1>하루 끝 — 세션 현황판</h1>
+  <p class="sub">상태 하나가 → 팔 수 있는 세션 한 벌이 되기까지. 오늘 뭐부터 할지 한 장.</p>
+  <div class="pipeline"><span class="stage">상태</span><span class="arrow">→</span><span class="stage">재료</span><span class="arrow">→</span><span class="stage">질문지</span><span class="arrow">→</span><span class="stage">대본</span><span class="arrow">→</span><span class="stage">AI티빼기</span><span class="arrow">→</span><span class="stage">결점검</span><span class="arrow">→</span><span class="stage">발행</span></div>
+
+  <div class="callout today"><div class="lbl">오늘</div>
+    <div class="today-row"><span class="today-k">✅ 오늘 한 일</span><span><span class="dash">아직 없음</span></span></div>
+    <div class="today-row"><span class="today-k">▶ 오늘 할 일</span><span>"세션_텅빈저녁_v0.1" — 대본은 됐어요. 읽고 녹음하면 발행 후보가 됩니다.</span></div>
+  </div>
+  
+  <div class="callout adv"><div class="lbl">💡 추천</div><div class="adv-line">한 단계에 일이 쌓였어요(병목: 발행).</div></div>
+
+  <h2 class="sec-title">세션별 진도</h2>
+  <div class="prows">
+  <div class="prow">
+    <span class="pname">2026-06-21_김경일_이질문던져보세요</span>
+    <span class="pbar">▓▓░░░░░</span>
+    <span class="plabel">재료 (2/7)</span>
+  </div>
+  <div class="prow">
+    <span class="pname">2026-06-21_이연_스스로를연인처럼</span>
+    <span class="pbar">▓▓░░░░░</span>
+    <span class="plabel">재료 (2/7)</span>
+  </div>
+  <div class="prow">
+    <span class="pname">세션_텅빈저녁_v0.1</span>
+    <span class="pbar">▓▓▓▓░░░</span>
+    <span class="plabel">대본 (4/7)</span>
+  </div>
+  <div class="prow">
+    <span class="pname">오디오대본_멍한주말오후_v0.1</span>
+    <span class="pbar">▓▓▓▓░░░</span>
+    <span class="plabel">대본 (4/7)</span>
+  </div>
+  <div class="prow">
+    <span class="pname">오디오대본_첫 세션 맛보기_v0.1</span>
+    <span class="pbar">▓▓▓▓▓▓░</span>
+    <span class="plabel">녹음 (6/7)</span>
+  </div>
+  <div class="prow">
+    <span class="pname">오디오대본_첫세션-맛보기_v0.2</span>
+    <span class="pbar">▓▓▓▓▓▓░</span>
+    <span class="plabel">녹음 (6/7)</span>
+  </div>
+  <div class="prow">
+    <span class="pname">오디오대본_하루끝-나에게_v0.1</span>
+    <span class="pbar">▓▓▓▓▓▓░</span>
+    <span class="plabel">녹음 (6/7)</span>
+  </div>
+  <div class="prow">
+    <span class="pname">오디오대본_하루끝-나에게_v0.2</span>
+    <span class="pbar">▓▓▓▓▓▓░</span>
+    <span class="plabel">녹음 (6/7)</span>
+  </div>
+  <div class="prow">
+    <span class="pname">오디오대본_하루끝-나에게_v0.3_10분</span>
+    <span class="pbar">▓▓▓▓▓▓░</span>
+    <span class="plabel">녹음 (6/7)</span>
+  </div>
+  <div class="prow">
+    <span class="pname">오디오대본_하루끝-나에게_v0.4</span>
+    <span class="pbar">▓▓▓▓▓▓▓</span>
+    <span class="plabel">발행 (7/7)</span>
+  </div></div>
+
+  <h2 class="sec-title">어디서 막히나</h2>
+  <div class="brows">
+    
+  <div class="brow"><span class="bk">재료</span>
+    <span class="bbar" style="--w:40%"></span>
+    <span class="bn">2</span></div>
+    
+  <div class="brow"><span class="bk">대본</span>
+    <span class="bbar" style="--w:40%"></span>
+    <span class="bn">2</span></div>
+    
+  <div class="brow"><span class="bk">녹음</span>
+    <span class="bbar" style="--w:100%"></span>
+    <span class="bn">5</span></div>
+    
+  <div class="brow"><span class="bk">발행</span>
+    <span class="bbar" style="--w:20%"></span>
+    <span class="bn">1</span></div>
+    <div class="brate">발행까지 10%</div>
+  </div>
+
+  <div class="board">
+    
+  <section class="col">
+    <h2>정리된 재료 <span class="count">2</span></h2>
+    <p class="hint">읽은 자료·자막 → 질문·과제 재료</p>
+    <div class="item">
+      <div class="iname">2026-06-21_김경일_이질문던져보세요</div><div class="ibadge">6/21 손댐 · 오늘</div></div><div class="item">
+      <div class="iname">2026-06-21_이연_스스로를연인처럼</div><div class="ibadge">6/21 손댐 · 오늘</div></div>
+  </section>
+    
+  <section class="col">
+    <h2>대본 초안 <span class="count">2</span></h2>
+    <p class="hint">아직 녹음 전</p>
+    <div class="item">
+      <div class="iname">세션_텅빈저녁_v0.1</div><div class="ibadge">6/21 손댐 · 오늘</div></div><div class="item">
+      <div class="iname">오디오대본_멍한주말오후_v0.1</div><div class="ibadge">6/21 손댐 · 오늘</div></div>
+  </section>
+    
+  <section class="col">
+    <h2>녹음·발행 <span class="count">6</span></h2>
+    <p class="hint">녹음까지 된 것</p>
+    <div class="item">
+      <div class="iname">오디오대본_첫 세션 맛보기_v0.1</div><div class="ibadge">6/15 손댐 · 6일째</div></div><div class="item">
+      <div class="iname">오디오대본_첫세션-맛보기_v0.2</div><div class="ibadge">6/16 손댐 · 6일째</div></div><div class="item">
+      <div class="iname">오디오대본_하루끝-나에게_v0.1</div><div class="ibadge">6/15 손댐 · 6일째</div></div><div class="item">
+      <div class="iname">오디오대본_하루끝-나에게_v0.2</div><div class="ibadge">6/16 손댐 · 6일째</div></div><div class="item">
+      <div class="iname">오디오대본_하루끝-나에게_v0.3_10분</div><div class="ibadge">6/17 손댐 · 4일째</div></div><div class="item">
+      <div class="iname">오디오대본_하루끝-나에게_v0.4</div><div class="ibadge">6/19 손댐 · 2일째</div></div>
+  </section>
+  </div>
+  <div class="tally">
+    <div class="t"><div class="n">2</div><div class="k">재료</div></div>
+    <div class="t"><div class="n">2</div><div class="k">대본</div></div>
+    <div class="t"><div class="n">5</div><div class="k">녹음</div></div>
+    <div class="t"><div class="n">1</div><div class="k">발행</div></div>
+  </div>
+
+  <details class="fold"><summary>세션 생산 라인 — 누가 무엇으로</summary>
+    <div class="lanes">
+      <div class="lane lane-head"><div>단계</div><div>누가</div><div>무엇을</div><div>스킬·도구</div><div>저장 위치</div></div>
+      
+    <div class="lane">
+      <div class="lane-step">① 상태</div>
+      <div class="lane-who me">✋ 나</div>
+      <div class="lane-what">어떤 상태로 세션을 만들지 고른다</div>
+      <div class="lane-tool"><span class="dash">—</span></div>
+      <div class="lane-save"><span class="dash">—</span></div>
+    </div>
+    <div class="lane">
+      <div class="lane-step">② 재료 모으기</div>
+      <div class="lane-who ai">🤖 AI</div>
+      <div class="lane-what">유튜브 자막·자료를 읽어 핵심을 뽑는다</div>
+      <div class="lane-tool"><span class="chip">YouTube 자막</span></div>
+      <div class="lane-save">자료함/정리</div>
+    </div>
+    <div class="lane">
+      <div class="lane-step">③ 질문지·과제</div>
+      <div class="lane-who ai">🤖 AI</div>
+      <div class="lane-what">재료에서 질문·과제를 정리한다</div>
+      <div class="lane-tool"><span class="chip">질문과제정리</span></div>
+      <div class="lane-save">하루끝-키트/outputs</div>
+    </div>
+    <div class="lane">
+      <div class="lane-step">④ 대본 초안</div>
+      <div class="lane-who ai">🤖 AI</div>
+      <div class="lane-what">녹음용 대본 초안을 쓴다</div>
+      <div class="lane-tool"><span class="chip">녹음대본</span></div>
+      <div class="lane-save">하루끝-키트/outputs</div>
+    </div>
+    <div class="lane">
+      <div class="lane-step">⑤ AI티 빼기</div>
+      <div class="lane-who ai">🤖 AI</div>
+      <div class="lane-what">기계 말투를 걷어낸다</div>
+      <div class="lane-tool"><span class="chip">결다듬기</span></div>
+      <div class="lane-save">하루끝-키트/outputs</div>
+    </div>
+    <div class="lane">
+      <div class="lane-step">⑥ 결 점검</div>
+      <div class="lane-who both">🤖+✋</div>
+      <div class="lane-what">금지어·거울·결을 보고, 마지막은 내가 본다</div>
+      <div class="lane-tool"><span class="chip">결다듬기</span></div>
+      <div class="lane-save"><span class="dash">—</span></div>
+    </div>
+    <div class="lane">
+      <div class="lane-step">⑦ 녹음·발행</div>
+      <div class="lane-who me">✋ 나</div>
+      <div class="lane-what">내 목소리로 녹음하고 사이트에 올린다</div>
+      <div class="lane-tool"><span class="dash">—</span></div>
+      <div class="lane-save">노션 · 사이트</div>
+    </div>
+    </div>
+  </details>
+  <details class="fold"><summary>내보내기 전 점검 4칸</summary>
+    <div class="checks">
+    <label class="check" for="chk-ban">
+      <input type="checkbox" id="chk-ban" data-chk="ban">
+      <span class="check-k">금지어 0</span>
+      <span class="check-d">쓰면 안 되는 말이 하나도 없나 (CLAUDE.md §5)</span>
+    </label>
+    <label class="check" for="chk-mirror">
+      <input type="checkbox" id="chk-mirror" data-chk="mirror">
+      <span class="check-k">거울</span>
+      <span class="check-d">판정·조언이 아니라 비춰주기인가</span>
+    </label>
+    <label class="check" for="chk-noai">
+      <input type="checkbox" id="chk-noai" data-chk="noai">
+      <span class="check-k">AI티 없음</span>
+      <span class="check-d">기계 말투·번역투가 없나</span>
+    </label>
+    <label class="check" for="chk-mine">
+      <input type="checkbox" id="chk-mine" data-chk="mine">
+      <span class="check-k">최종 문장은 내가</span>
+      <span class="check-d">마지막 문장은 내 손을 거쳤나</span>
+    </label></div>
+    <button class="check-reset" id="reset">모두 지우기 (새 세션 시작)</button>
+  </details>
+
+  <p class="foot">자동 생성 · 2026. 6. 22. AM 7:30:36 · node automations/session-dashboard.mjs</p>
+</div>
+<script>
+  (function(){
+    var KEY='haru-check-v1', saved={};
+    try{ saved=JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){ saved={}; }
+    var boxes=document.querySelectorAll('input[data-chk]');
+    boxes.forEach(function(b){
+      b.checked=!!saved[b.dataset.chk];
+      b.addEventListener('change',function(){ saved[b.dataset.chk]=b.checked; localStorage.setItem(KEY,JSON.stringify(saved)); });
+    });
+    var reset=document.getElementById('reset');
+    if(reset) reset.addEventListener('click',function(){ saved={}; localStorage.removeItem(KEY); boxes.forEach(function(b){ b.checked=false; }); });
+  })();
+</script>
+</body></html>

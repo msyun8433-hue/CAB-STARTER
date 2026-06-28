@@ -1,0 +1,259 @@
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - complementary "링크 건너뛰기" [ref=e5]:
+        - link "기본 콘텐츠로 건너뛰기" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e7]: 기본 콘텐츠로 건너뛰기
+        - button "키보드 단축키" [ref=e8]:
+          - generic [ref=e9]: 키보드 단축키
+        - link "접근성 도움말 새 창에서 외부 링크 열기" [ref=e10] [cursor=pointer]:
+          - /url: https://cloud.google.com/docs/accessibility?hl=ko
+          - generic [ref=e11]:
+            - text: 접근성 도움말
+            - generic "새 창에서 외부 링크 열기" [ref=e12]:
+              - img "새 창에서 외부 링크 열기" [ref=e13]:
+                - img [ref=e14]
+        - link "접근성 관련 의견 새 창에서 외부 링크 열기" [ref=e16] [cursor=pointer]:
+          - /url: https://support.google.com/accessibility/contact/feedback?hl=ko
+          - generic [ref=e17]:
+            - text: 접근성 관련 의견
+            - generic "새 창에서 외부 링크 열기" [ref=e18]:
+              - img "새 창에서 외부 링크 열기" [ref=e19]:
+                - img [ref=e20]
+      - banner [ref=e23]:
+        - generic [ref=e24]:
+          - navigation [ref=e27]:
+            - button "탐색 메뉴 (.)" [ref=e28] [cursor=pointer]:
+              - img [ref=e30]
+          - link "Google Cloud Platform 홈" [ref=e32] [cursor=pointer]:
+            - /url: /
+            - generic:
+              - img
+          - button "현재 youtube에서 작업 중입니다. 프로젝트, 폴더 또는 조직을 전환하려면 Enter 키를 누르세요." [ref=e228]:
+            - generic [ref=e229]:
+              - img [ref=e231]
+              - generic [ref=e234]: youtube
+        - search "Google 클라우드 플랫폼" [ref=e46]:
+          - combobox [ref=e47]:
+            - searchbox "쿼리를 입력하여 리소스, 문서, 제품 등 검색" [ref=e48]
+          - button "모든 검색결과 보기" [disabled]:
+            - generic:
+              - img
+            - generic: 검색
+        - generic [ref=e49]:
+          - generic [ref=e50]:
+            - button "Gemini AI 채팅 열기 (Option G)" [ref=e238] [cursor=pointer]:
+              - img [ref=e240]
+            - button "무료 평가판 상태" [ref=e245] [cursor=pointer]:
+              - img [ref=e247]
+            - button "Cloud Shell 활성화 (G then S)" [ref=e249] [cursor=pointer]:
+              - img [ref=e251]
+            - button "읽지 않은 알림 1개 알림 열기" [ref=e253] [cursor=pointer]:
+              - generic [ref=e256]: "1"
+            - button "설정 및 유틸리티" [ref=e65] [cursor=pointer]:
+              - img [ref=e67]
+          - 'button "계정: MS Yun (msyun8433@gmail.com)" [ref=e259]':
+            - img [ref=e260]
+    - generic [ref=e91]:
+      - navigation "API 및 서비스" [ref=e98]:
+        - generic [ref=e99]:
+          - heading "API 및 서비스" [level=2] [ref=e101]:
+            - link "API 및 서비스" [ref=e102] [cursor=pointer]:
+              - /url: /apis
+              - img [ref=e105]
+              - generic [ref=e109]: API 및 서비스
+          - list "사용 설정된 API 및 서비스, 5개 중 1개 옵션 더보기 라이브러리, 5개 중 2개 옵션 더보기 사용자 인증 정보, 5개 중 3개 옵션 더보기 OAuth 동의 화면, 5개 중 4개 옵션 더보기 페이지 사용 동의, 5개 중 5개 옵션 더보기" [ref=e113]:
+            - listitem [ref=e114]:
+              - generic [ref=e117]:
+                - link "사용 설정된 API 및 서비스, 5개 중 1개" [ref=e118] [cursor=pointer]:
+                  - /url: /apis/dashboard
+                  - generic [ref=e119]:
+                    - img [ref=e122]
+                    - generic [ref=e124]: 사용 설정된 API 및 서비스
+                - button "옵션 더보기" [ref=e126] [cursor=pointer]:
+                  - img [ref=e128]
+            - listitem [ref=e130]:
+              - generic [ref=e133]:
+                - link "라이브러리, 5개 중 2개" [ref=e134] [cursor=pointer]:
+                  - /url: /apis/library
+                  - generic [ref=e135]:
+                    - img [ref=e138]
+                    - generic [ref=e140]: 라이브러리
+                - button "옵션 더보기" [ref=e142] [cursor=pointer]:
+                  - img [ref=e144]
+            - listitem [ref=e146]:
+              - generic [ref=e149]:
+                - link "사용자 인증 정보, 5개 중 3개" [ref=e150] [cursor=pointer]:
+                  - /url: /apis/credentials
+                  - generic [ref=e151]:
+                    - img [ref=e154]
+                    - generic [ref=e156]: 사용자 인증 정보
+                - button "옵션 더보기" [ref=e158] [cursor=pointer]:
+                  - img [ref=e160]
+            - listitem [ref=e162]:
+              - generic [ref=e165]:
+                - link "OAuth 동의 화면, 5개 중 4개" [ref=e166] [cursor=pointer]:
+                  - /url: /apis/credentials/consent
+                  - generic [ref=e167]:
+                    - img [ref=e170]
+                    - generic [ref=e172]: OAuth 동의 화면
+                - button "옵션 더보기" [ref=e174] [cursor=pointer]:
+                  - img [ref=e176]
+            - listitem [ref=e178]:
+              - generic [ref=e181]:
+                - link "페이지 사용 동의, 5개 중 5개" [ref=e182] [cursor=pointer]:
+                  - /url: /apis/agreements
+                  - generic [ref=e183]:
+                    - img [ref=e186]
+                    - generic [ref=e189]: 페이지 사용 동의
+                - button "옵션 더보기" [ref=e191] [cursor=pointer]:
+                  - img [ref=e193]
+          - button "API 및 서비스 탐색 메뉴 전환" [pressed] [ref=e196] [cursor=pointer]:
+            - img [ref=e199]
+      - main [ref=e202]:
+        - generic [ref=e266]:
+          - generic [ref=e269]:
+            - heading "사용자 인증 정보" [level=1] [ref=e272]:
+              - generic [ref=e273]: 사용자 인증 정보
+            - generic [ref=e277]:
+              - generic [ref=e278]:
+                - button "사용자 인증 정보 만들기" [active] [ref=e280]:
+                  - img [ref=e282]:
+                    - img [ref=e283]
+                  - generic [ref=e285]: 사용자 인증 정보 만들기
+                  - img [ref=e287]
+                - button "사용자 인증 정보 삭제" [disabled] [ref=e291]:
+                  - img [ref=e293]:
+                    - img [ref=e294]
+                  - generic [ref=e296]: 삭제
+              - button "삭제된 사용자 인증 정보 복원" [ref=e297] [cursor=pointer]:
+                - generic [ref=e298]:
+                  - img [ref=e300]:
+                    - img [ref=e301]
+                  - text: 삭제된 사용자 인증 정보 복원
+          - generic [ref=e310]:
+            - paragraph [ref=e312]:
+              - text: 사용 설정한 API에 액세스하려면 사용자 인증 정보를 만드세요.
+              - link "이 기능 자세히 알아보기 새 창에서 외부 링크 열기" [ref=e313] [cursor=pointer]:
+                - /url: https://cloud.google.com/docs/authentication?hl=ko
+                - text: 자세히 알아보기
+                - img "새 창에서 외부 링크 열기" [ref=e314]:
+                  - img [ref=e315]
+            - status [ref=e318]:
+              - img "경고" [ref=e319]:
+                - img [ref=e320]
+              - generic [ref=e322]:
+                - generic [ref=e324]: 애플리케이션에 대한 정보를 포함하여 OAuth 동의 화면을 구성해야 합니다.
+                - link "동의 화면 구성" [ref=e326] [cursor=pointer]:
+                  - /url: /apis/credentials/consent?project=alpine-biplane-500105-n1
+                  - generic [ref=e327]: 동의 화면 구성
+            - generic [ref=e328]:
+              - heading "API 키" [level=2] [ref=e330]
+              - grid "API 키 , 테이블을 탐색하려면 화살표 키를 사용하세요. 셀과 상호작용하려면 키를 입력하세요. 셀 안으로 이동하려면 Tab 키를 누르세요. 셀에서 나가려면 Esc 키를 누르세요." [ref=e334]:
+                - rowgroup [ref=e343]:
+                  - row "행 선택 상태 이름 바인드된 계정 생성일 제한사항 작업" [ref=e344] [cursor=pointer]:
+                    - gridcell "행 선택" [ref=e345]:
+                      - checkbox "모든 행 선택" [disabled] [ref=e346]
+                    - columnheader "상태" [ref=e347]:
+                      - img [ref=e351]
+                    - columnheader "이름" [ref=e353]:
+                      - generic [ref=e355]:
+                        - generic [ref=e356]: 이름
+                        - 'button "정렬 기준: 이름" [ref=e357]':
+                          - img [ref=e359]
+                    - columnheader "바인드된 계정" [ref=e361]:
+                      - generic [ref=e363]:
+                        - generic [ref=e364]:
+                          - text: Bound account
+                          - button "바인드된 계정 도움말" [ref=e366]:
+                            - img [ref=e368]
+                        - 'button "정렬 기준: 바인드된 계정" [ref=e370]':
+                          - img [ref=e372]
+                    - columnheader "생성일" [ref=e374]:
+                      - generic [ref=e376]:
+                        - generic [ref=e377]: 생성일
+                        - 'button "정렬 기준: 생성일" [ref=e378]':
+                          - img [ref=e380]
+                    - columnheader "제한사항" [ref=e382]:
+                      - generic [ref=e384]:
+                        - generic [ref=e385]: 제한사항
+                        - 'button "정렬 기준: 제한사항" [ref=e386]':
+                          - img [ref=e388]
+                    - columnheader "작업" [ref=e390]:
+                      - generic [ref=e392]: 작업
+                - rowgroup [ref=e393]:
+                  - row "표시할 API 키가 없습니다." [ref=e394] [cursor=pointer]:
+                    - gridcell "표시할 API 키가 없습니다." [ref=e395]
+            - generic [ref=e396]:
+              - heading "OAuth 2.0 클라이언트 ID" [level=2] [ref=e398]
+              - grid "OAuth 2.0 클라이언트 ID , 테이블을 탐색하려면 화살표 키를 사용하세요. 셀과 상호작용하려면 키를 입력하세요. 셀 안으로 이동하려면 Tab 키를 누르세요. 셀에서 나가려면 Esc 키를 누르세요." [ref=e402]:
+                - rowgroup [ref=e410]:
+                  - row "행 선택 이름 생성일 유형 클라이언트 ID 작업" [ref=e411] [cursor=pointer]:
+                    - gridcell "행 선택" [ref=e412]:
+                      - checkbox "모든 행 선택" [disabled] [ref=e413]
+                    - columnheader "이름" [ref=e414]:
+                      - generic [ref=e416]:
+                        - generic [ref=e417]: 이름
+                        - 'button "정렬 기준: 이름" [ref=e418]':
+                          - img [ref=e420]
+                    - columnheader "생성일" [ref=e422]:
+                      - generic [ref=e424]:
+                        - generic [ref=e425]: 생성일
+                        - 'button "정렬 기준: 생성일" [ref=e426]':
+                          - img [ref=e428]
+                    - columnheader "유형" [ref=e430]:
+                      - generic [ref=e432]:
+                        - generic [ref=e433]: 유형
+                        - 'button "정렬 기준: 유형" [ref=e434]':
+                          - img [ref=e436]
+                    - columnheader "클라이언트 ID" [ref=e438]:
+                      - generic [ref=e440]:
+                        - generic [ref=e441]: 클라이언트 ID
+                        - 'button "정렬 기준: 클라이언트 ID" [ref=e442]':
+                          - img [ref=e444]
+                    - columnheader "작업" [ref=e446]:
+                      - generic [ref=e448]: 작업
+                - rowgroup [ref=e449]:
+                  - row "표시할 OAuth 클라이언트가 없습니다." [ref=e450] [cursor=pointer]:
+                    - gridcell "표시할 OAuth 클라이언트가 없습니다." [ref=e451]
+            - generic [ref=e452]:
+              - generic [ref=e453]:
+                - heading "서비스 계정" [level=2] [ref=e454]
+                - link "서비스 계정 관리" [ref=e458] [cursor=pointer]:
+                  - /url: /iam-admin/serviceaccounts?project=alpine-biplane-500105-n1
+              - grid "서비스 계정 , 테이블을 탐색하려면 화살표 키를 사용하세요. 셀과 상호작용하려면 키를 입력하세요. 셀 안으로 이동하려면 Tab 키를 누르세요. 셀에서 나가려면 Esc 키를 누르세요." [ref=e462]:
+                - rowgroup [ref=e468]:
+                  - row "행 선택 이메일 이름 작업" [ref=e469] [cursor=pointer]:
+                    - gridcell "행 선택" [ref=e470]:
+                      - checkbox "모든 행 선택" [disabled] [ref=e471]
+                    - columnheader "이메일" [ref=e472]:
+                      - generic [ref=e474]:
+                        - generic [ref=e475]: 이메일
+                        - 'button "정렬 기준: 이메일" [ref=e476]':
+                          - img [ref=e478]
+                    - columnheader "이름" [ref=e480]:
+                      - generic [ref=e482]:
+                        - generic [ref=e483]: 이름
+                        - 'button "정렬 기준: 이름" [ref=e484]':
+                          - img [ref=e486]
+                    - columnheader "작업" [ref=e488]:
+                      - generic [ref=e490]: 작업
+                - rowgroup [ref=e491]:
+                  - row "표시할 서비스 계정이 없습니다." [ref=e492] [cursor=pointer]:
+                    - gridcell "표시할 서비스 계정이 없습니다." [ref=e493]
+  - iframe [ref=e226]:
+    
+  - iframe [ref=e495]:
+    
+  - iframe [ref=e496]:
+    
+  - dialog "도움말이 이동되었습니다" [ref=e499]:
+    - generic [ref=e500]:
+      - generic [ref=e501]:
+        - heading "도움말이 이동되었습니다" [level=2] [ref=e504]:
+          - generic [ref=e505]: 도움말이 이동되었습니다
+        - paragraph [ref=e506]: 이제 위의 메뉴에서 문서, 지원, 튜토리얼을 찾을 수 있습니다.
+      - button "설명 닫기" [ref=e507] [cursor=pointer]:
+        - img [ref=e509]:
+          - img [ref=e510]

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- CAB W1 마인드맵 템플릿 · XMind 등에서 [파일 → 가져오기 → OPML] 로 열면 가지가 펼쳐집니다.
+     6가지 가지를 내 사업으로 채운 뒤, [내보내기 → 텍스트/OPML] 해서 /cab-w1-departments 에 붙여넣으세요. -->
+<opml version="2.0">
+  <head>
+    <title>내 사업 마인드맵 (CAB W1)</title>
+  </head>
+  <body>
+    <outline text="내 사업">
+      <outline text="① 사업 한 줄">
+        <outline text="누구의: "/>
+        <outline text="어떤 문제: "/>
+        <outline text="어떤 방법으로: "/>
+        <outline text="사업·브랜드명: "/>
+      </outline>
+      <outline text="② 꿈의 고객 한 명">
+        <outline text="나이·상황·직업: "/>
+        <outline text="밤에 잠 못 드는 통증: "/>
+        <outline text="이미 시도했지만 안 된 것: "/>
+        <outline text="내가 주는 변화: "/>
+      </outline>
+      <outline text="③ 반복업무 + 통증">
+        <outline text="반복업무 1 (빈도 / 1회 소요): "/>
+        <outline text="반복업무 2: "/>
+        <outline text="반복업무 3: "/>
+        <outline text="반복업무 4: "/>
+        <outline text="반복업무 5: "/>
+        <outline text="⭐ 가장 벗어나고 싶은 통증 1개: "/>
+      </outline>
+      <outline text="④ 평소 쓰는 도구 전부">
+        <outline text="도구들 (10~25개, 떠오르는 대로): "/>
+      </outline>
+      <outline text="⑤ 내 톤 · 절대 금지어">
+        <outline text="말투 (예: 따뜻·간결·실행 위주): "/>
+        <outline text="자주 쓰는 단어: "/>
+        <outline text="AI 가 절대 쓰면 안 되는 표현 (금지어): "/>
+      </outline>
+      <outline text="⑥ 우선순위 · 목표 · 안 하는 것">
+        <outline text="우선순위 1: "/>
+        <outline text="우선순위 2: "/>
+        <outline text="우선순위 3: "/>
+        <outline text="이번 분기 목표 (측정 가능하게): "/>
+        <outline text="안 하는 것 (명시적으로): "/>
+      </outline>
+    </outline>
+  </body>
+</opml>

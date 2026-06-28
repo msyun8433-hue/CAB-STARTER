@@ -1,0 +1,657 @@
+- generic [ref=e2]:
+  - banner [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - button "가이드" [active] [ref=e9] [cursor=pointer]
+        - generic [ref=e11]:
+          - link "YouTube 홈" [ref=e12] [cursor=pointer]:
+            - /url: /
+          - generic [ref=e16]: KR
+        - button "탐색 건너뛰기" [ref=e20] [cursor=pointer]:
+          - generic: 탐색 건너뛰기
+      - generic [ref=e24]:
+        - search [ref=e25]:
+          - generic [ref=e26]:
+            - generic [ref=e27]:
+              - combobox "검색" [expanded] [ref=e29]: 자기 자신과의 대화 혼자
+              - button [ref=e32] [cursor=pointer]
+              - button "검색어 삭제" [ref=e34] [cursor=pointer]
+            - button "Search" [ref=e39] [cursor=pointer]
+        - generic [ref=e42]:
+          - button "음성으로 검색" [ref=e44] [cursor=pointer]
+          - tooltip "tooltip"
+      - generic [ref=e49]:
+        - button "설정" [ref=e54] [cursor=pointer]
+        - link "로그인" [ref=e58] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Dko%26next%3Dhttps%253A%252F%252Fwww.youtube.com%252Fresults%253Fsearch_query%253D%2525EC%25259E%252590%2525EA%2525B8%2525B0%252B%2525EC%25259E%252590%2525EC%25258B%2525A0%2525EA%2525B3%2525BC%2525EC%25259D%252598%252B%2525EB%25258C%252580%2525ED%252599%252594%252B%2525ED%252598%2525BC%2525EC%25259E%252590&hl=ko&ec=65620
+          - generic: 로그인
+  - navigation [ref=e62]:
+    - generic [ref=e63]:
+      - link "홈" [ref=e65] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e67]: 홈
+      - link "Shorts" [ref=e69] [cursor=pointer]:
+        - /url: /shorts/
+        - generic [ref=e71]: Shorts
+      - link "구독" [ref=e73] [cursor=pointer]:
+        - /url: /feed/subscriptions
+        - generic [ref=e75]: 구독
+      - link "내 페이지" [ref=e77] [cursor=pointer]:
+        - /url: /feed/you
+        - generic [ref=e79]: 내 페이지
+  - main [ref=e81]:
+    - generic [ref=e82]:
+      - generic [ref=e84]:
+        - tablist [ref=e89]:
+          - tab "전체" [selected] [ref=e93] [cursor=pointer]:
+            - generic [ref=e95]: 전체
+          - tab "Shorts" [ref=e102] [cursor=pointer]:
+            - generic [ref=e104]: Shorts
+          - tab "시청하지 않음" [ref=e111] [cursor=pointer]:
+            - generic [ref=e113]: 시청하지 않음
+          - tab "감상한 동영상" [ref=e120] [cursor=pointer]:
+            - generic [ref=e122]: 감상한 동영상
+          - tab "동영상" [ref=e129] [cursor=pointer]:
+            - generic [ref=e131]: 동영상
+          - tab "최근에 업로드된 동영상" [ref=e138] [cursor=pointer]:
+            - generic [ref=e140]: 최근에 업로드된 동영상
+          - tab "라이브" [ref=e147] [cursor=pointer]:
+            - generic [ref=e149]: 라이브
+        - generic [ref=e154]:
+          - button "검색 필터" [ref=e156] [cursor=pointer]:
+            - generic: 필터
+          - tooltip "tooltip"
+      - generic [ref=e165]:
+        - generic [ref=e167]:
+          - link [ref=e169] [cursor=pointer]:
+            - /url: /watch?v=ZEk_eMZ6Sjo&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q
+            - img [ref=e171]
+            - img [ref=e174]:
+              - generic [ref=e175]: 23:06
+            - generic:
+              - generic: 지금 재생 중
+              - generic:
+                - img
+          - generic [ref=e176] [cursor=pointer]:
+            - generic [ref=e177]:
+              - 'heading "(Kor, Chi) ‘나’와 ‘너’의 균형을 만드는 대화법 | 박재연 리플러스 인간연구소 소장 | #직장인 #대화 #연습 | 세바시 1730회 23분" [level=3] [ref=e179]':
+                - 'link "(Kor, Chi) ‘나’와 ‘너’의 균형을 만드는 대화법 | 박재연 리플러스 인간연구소 소장 | #직장인 #대화 #연습 | 세바시 1730회 23분" [ref=e180]':
+                  - /url: /watch?v=ZEk_eMZ6Sjo&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q
+                  - text: "(Kor, Chi) ‘나’와 ‘너’의 균형을 만드는 대화법 | 박재연 리플러스 인간연구소 소장 | #직장인 #대화 #연습 | 세바시 1730회"
+              - generic [ref=e183]:
+                - generic [ref=e184]: 조회수 162만회
+                - generic [ref=e185]: •2년 전
+            - generic [ref=e186]:
+              - link "세바시 강연 Sebasi Talk 채널로 이동" [ref=e187]:
+                - /url: /@sebasi15
+              - link "세바시 강연 Sebasi Talk" [ref=e193]:
+                - /url: /@sebasi15
+            - generic [ref=e194]:
+              - generic [ref=e195]: "강연 소개 : 회사에서, 친구끼리, 가족끼리 대화를 잘하려면 혼잣말을 잘 해야합니다. 대화는 같이 하는 것인데 왜 혼잣말을 잘해야 ..."
+              - tooltip "tooltip"
+            - img "자막" [ref=e200]:
+              - generic [ref=e201]: 자막
+        - generic [ref=e203]:
+          - link [ref=e205] [cursor=pointer]:
+            - /url: /watch?v=PMJ4d7LY8Ao&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q
+            - img [ref=e207]
+            - img [ref=e210]:
+              - generic [ref=e211]: 11:30
+            - generic:
+              - generic: 지금 재생 중
+              - generic:
+                - img
+          - generic [ref=e212] [cursor=pointer]:
+            - generic [ref=e213]:
+              - 'heading "김창옥 교수 #06 | 1년 365일, 하루 24시간 중 스스로와 대화한 시간은 얼마나 되시나요? | #어쩌다어른 #사피엔스 | CJ ENM 160915 방송 11분 30초" [level=3] [ref=e215]':
+                - 'link "김창옥 교수 #06 | 1년 365일, 하루 24시간 중 스스로와 대화한 시간은 얼마나 되시나요? | #어쩌다어른 #사피엔스 | CJ ENM 160915 방송 11분 30초" [ref=e216]':
+                  - /url: /watch?v=PMJ4d7LY8Ao&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q
+                  - text: "김창옥 교수 #06 | 1년 365일, 하루 24시간 중 스스로와 대화한 시간은 얼마나 되시나요? | #어쩌다어른 #사피엔스 | CJ ENM 160915 방송"
+              - generic [ref=e219]:
+                - generic [ref=e220]: 조회수 77만회
+                - generic [ref=e221]: •5년 전
+            - generic [ref=e222]:
+              - link "사피엔스 스튜디오 채널로 이동" [ref=e223]:
+                - /url: /@sapiens_studio
+              - generic [ref=e225]:
+                - link "사피엔스 스튜디오" [ref=e229]:
+                  - /url: /@sapiens_studio
+                - img "인증됨" [ref=e234]
+            - generic [ref=e236]:
+              - text: 프리미엄 특강쇼 [어쩌다 어른] EP.50 어쩌다 어른 (2016) 대한민국 대표 강연자들의 다시 보고 싶은 명강의가 새로운 인사이트로 ...
+              - tooltip "tooltip"
+        - generic [ref=e238]:
+          - link [ref=e240] [cursor=pointer]:
+            - /url: /watch?v=uvy9T_coMYw&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q
+            - img [ref=e242]
+            - img [ref=e245]:
+              - generic [ref=e246]: 3:06
+            - generic:
+              - generic: 지금 재생 중
+              - generic:
+                - img
+          - generic [ref=e247] [cursor=pointer]:
+            - generic [ref=e248]:
+              - heading "'나'를 잃어버린 사람들은 보세요 (Feat. 감정의 중요성) | 정혜신 정신과 의사 [어쩌다어른] 3분 6초" [level=3] [ref=e250]:
+                - link "'나'를 잃어버린 사람들은 보세요 (Feat. 감정의 중요성) | 정혜신 정신과 의사 [어쩌다어른] 3분 6초" [ref=e251]:
+                  - /url: /watch?v=uvy9T_coMYw&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q
+                  - text: "'나'를 잃어버린 사람들은 보세요 (Feat. 감정의 중요성) | 정혜신 정신과 의사 [어쩌다어른]"
+              - generic [ref=e254]:
+                - generic [ref=e255]: 조회수 86만회
+                - generic [ref=e256]: •7년 전
+            - generic [ref=e257]:
+              - link "tvN Joy 채널로 이동" [ref=e258]:
+                - /url: /@tvNJoy_official
+              - link "tvN Joy" [ref=e264]:
+                - /url: /@tvNJoy_official
+            - generic [ref=e265]:
+              - text: "어쩌다어른 #정혜신 #정신건강 프리미엄 특강쇼 [어쩌다 어른] EP.170 정혜신 정신과 의사 O tvN 어쩌다어른 : 대한민국 대표 강연자 ..."
+              - tooltip "tooltip"
+        - generic [ref=e267]:
+          - link [ref=e269] [cursor=pointer]:
+            - /url: /watch?v=e0odAwPbCwU&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q
+          - generic [ref=e271] [cursor=pointer]:
+            - generic [ref=e272]:
+              - heading "자기 자신과 대화하는 방법 | 정말 잘 지내고 있나요?, 제나 커처 14분 52초" [level=3] [ref=e274]:
+                - link "자기 자신과 대화하는 방법 | 정말 잘 지내고 있나요?, 제나 커처 14분 52초" [ref=e275]:
+                  - /url: /watch?v=e0odAwPbCwU&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q
+                  - text: 자기 자신과 대화하는 방법 | 정말 잘 지내고 있나요?, 제나 커처
+              - generic [ref=e278]:
+                - generic [ref=e279]: 조회수 5.3만회
+                - generic [ref=e280]: •3년 전
+            - generic [ref=e281]:
+              - 'link "써니즈 : 함께 성장 채널로 이동" [ref=e282]':
+                - /url: /@sunneeds
+              - generic [ref=e284]:
+                - 'link "써니즈 : 함께 성장" [ref=e288]':
+                  - /url: /@sunneeds
+                - img "인증됨" [ref=e293]
+            - generic [ref=e295]:
+              - text: "책 #마음 #지혜 * 이 영상은 금전적 지원을 받아 제작되었습니다. * 참고도서 정말 잘 지내고 있나요? - 제나 커처(온워드) 교보문고 ..."
+              - tooltip "tooltip"
+            - img "자막" [ref=e300]:
+              - generic [ref=e301]: 자막
+        - generic [ref=e303]:
+          - link [ref=e305] [cursor=pointer]:
+            - /url: /watch?v=7dA4TDkPH6E&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q0gcJCT8LAYcqIYzv
+          - generic [ref=e307] [cursor=pointer]:
+            - generic [ref=e308]:
+              - heading "스스로를 연인처럼 대하세요 15분" [level=3] [ref=e310]:
+                - link "스스로를 연인처럼 대하세요 15분" [ref=e311]:
+                  - /url: /watch?v=7dA4TDkPH6E&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q0gcJCT8LAYcqIYzv
+                  - text: 스스로를 연인처럼 대하세요
+              - generic [ref=e314]:
+                - generic [ref=e315]: 조회수 60만회
+                - generic [ref=e316]: •3년 전
+            - generic [ref=e317]:
+              - link "이연LEEYEON 채널로 이동" [ref=e318]:
+                - /url: /@%EC%9D%B4%EC%97%B0LEEYEON
+              - generic [ref=e319]:
+                - link "이연LEEYEON" [ref=e323]:
+                  - /url: /@%EC%9D%B4%EC%97%B0LEEYEON
+                - img "인증됨" [ref=e328]
+            - generic [ref=e330]:
+              - text: 이번 영상에서는 수채화를 해봤어요 :) 편안한 이야기가 되었기를 바랍니다.
+              - tooltip "tooltip"
+            - generic [ref=e333]:
+              - generic [ref=e334]:
+                - generic [ref=e337]: 요약
+                - button
+                - text: ·
+              - button "더보기" [ref=e342]
+        - generic [ref=e346]:
+          - generic [ref=e349]:
+            - img [ref=e351]
+            - heading "Shorts" [level=2] [ref=e354]
+          - generic [ref=e356]:
+            - generic [ref=e359]:
+              - link [ref=e360] [cursor=pointer]:
+                - /url: /shorts/ZOj5620Yx9g
+              - generic [ref=e364] [cursor=pointer]:
+                - 'link "꼭 고쳐야 하는 대화 습관 #강신주" [ref=e365]':
+                  - /url: /shorts/ZOj5620Yx9g
+                - generic [ref=e366]: 조회수 536만회
+              - button "추가 작업" [ref=e368] [cursor=pointer]
+            - generic [ref=e374]:
+              - link [ref=e375] [cursor=pointer]:
+                - /url: /shorts/B9pZi8v5tbQ
+              - generic [ref=e379] [cursor=pointer]:
+                - link "자신과의 대화 ㅡ 혼자의 시간도 괜찮아요." [ref=e380]:
+                  - /url: /shorts/B9pZi8v5tbQ
+                - generic [ref=e381]: 조회수 84회
+              - button "추가 작업" [ref=e383] [cursor=pointer]
+            - generic [ref=e389]:
+              - link [ref=e390] [cursor=pointer]:
+                - /url: /shorts/k3Tgo8P72GE
+              - generic [ref=e394] [cursor=pointer]:
+                - 'link "혼자있는 시간을 통해 자신과 대화를 나누자 #마인드셋 #인생조언 #마음공부 #고독 #외로움 #selfaffirmation" [ref=e395]':
+                  - /url: /shorts/k3Tgo8P72GE
+                - generic [ref=e396]: 조회수 238회
+              - button "추가 작업" [ref=e398] [cursor=pointer]
+            - generic [ref=e404]:
+              - link [ref=e405] [cursor=pointer]:
+                - /url: /shorts/gpC8zZxtgQY
+              - generic [ref=e409] [cursor=pointer]:
+                - 'link "자신과의 대화를 해 보신적이 있나요? 내가 원하는것이 무엇인지, 나의 능력은 어떠한지,내가 왜 공부를 열심히 해야하는지.. #자신과의 대화#자기계발 #자기관리" [ref=e410]':
+                  - /url: /shorts/gpC8zZxtgQY
+                - generic [ref=e411]: 조회수 85회
+              - button "추가 작업" [ref=e413] [cursor=pointer]
+            - generic [ref=e419]:
+              - link [ref=e420] [cursor=pointer]:
+                - /url: /shorts/b12GZEYtaiY
+              - generic [ref=e424] [cursor=pointer]:
+                - link "꼭 주변에 이런 사람 있다😤 자기 말만 하는 사람의 심리는?" [ref=e425]:
+                  - /url: /shorts/b12GZEYtaiY
+                - generic [ref=e426]: 조회수 24만회
+              - button "추가 작업" [ref=e428] [cursor=pointer]
+        - generic [ref=e433]:
+          - link [ref=e435] [cursor=pointer]:
+            - /url: /watch?v=3a9uKBrUtLU&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q
+          - generic [ref=e437] [cursor=pointer]:
+            - generic [ref=e438]:
+              - heading "‼️혼자일 때 (이때가) 진짜 삶을 바꿀 기회다.ㅣ'이혼숙려캠프 상담가' 이호선 숭실사이버대학교 교수ㅣ인생강의 20분" [level=3] [ref=e440]:
+                - link "‼️혼자일 때 (이때가) 진짜 삶을 바꿀 기회다.ㅣ'이혼숙려캠프 상담가' 이호선 숭실사이버대학교 교수ㅣ인생강의 20분" [ref=e441]:
+                  - /url: /watch?v=3a9uKBrUtLU&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q
+                  - text: ‼️혼자일 때 (이때가) 진짜 삶을 바꿀 기회다.ㅣ'이혼숙려캠프 상담가' 이호선 숭실사이버대학교 교수ㅣ인생강의
+              - generic [ref=e444]:
+                - generic [ref=e445]: 조회수 102만회
+                - generic [ref=e446]: •1년 전
+            - generic [ref=e447]:
+              - link "하와이 대저택 채널로 이동" [ref=e448]:
+                - /url: /@hawaiidjt
+              - generic [ref=e449]:
+                - link "하와이 대저택" [ref=e453]:
+                  - /url: /@hawaiidjt
+                - img "인증됨" [ref=e458]
+            - generic [ref=e460]:
+              - text: "발타자르 그라시안 [무례한 세상에서 나를 지키는 법] 교보문고 : https://vo.la/lSY9PpX 예스24 : https://vo.la/5cOU7MZ 알라딘 ..."
+              - tooltip "tooltip"
+        - generic [ref=e462]:
+          - link [ref=e464] [cursor=pointer]:
+            - /url: /watch?v=8A9Lx7lfa5k&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q
+          - generic [ref=e466] [cursor=pointer]:
+            - generic [ref=e467]:
+              - heading "\"3일만 이렇게 말하세요\" 무서울 정도로 인생이 바뀌는 혼잣말의 뇌과학 10분 52초" [level=3] [ref=e469]:
+                - link "\"3일만 이렇게 말하세요\" 무서울 정도로 인생이 바뀌는 혼잣말의 뇌과학 10분 52초" [ref=e470]:
+                  - /url: /watch?v=8A9Lx7lfa5k&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q
+                  - text: "\"3일만 이렇게 말하세요\" 무서울 정도로 인생이 바뀌는 혼잣말의 뇌과학"
+              - generic [ref=e473]:
+                - generic [ref=e474]: 조회수 17만회
+                - generic [ref=e475]: •2개월 전
+            - generic [ref=e476]:
+              - link "마음인덱스 (Mind Index) 채널로 이동" [ref=e477]:
+                - /url: /@%EB%A7%88%EC%9D%8C%EC%9D%B8%EB%8D%B1%EC%8A%A4
+              - link "마음인덱스 (Mind Index)" [ref=e482]:
+                - /url: /@%EB%A7%88%EC%9D%8C%EC%9D%B8%EB%8D%B1%EC%8A%A4
+            - generic [ref=e483]:
+              - generic [ref=e484]: 매일 아무렇지 않게 반복하던 혼잣말이 사실은 뇌의 필터와 선택, 행동의 방향까지 바꾸고 있었다면 어떨까요? 이 영상은 뇌과학 관점 ...
+              - tooltip "tooltip"
+            - generic [ref=e487]:
+              - generic [ref=e488]:
+                - generic [ref=e492]: 챕터 7
+                - button "혼잣말이 현실을 바꾸는 이유 | 혼잣말, 자기대화, 생각습관 | RAS가 내 현실을 걸러내는 방식 | RAS, 망상활성계, 뇌필터 | 왜 72시간이 중요한가 | 72시간, 신경가소성, 습관변화 | 긍정 확언이 자꾸 실패하는 진짜 이유 | 자기암시, 확언, 마인드셋 | 발표가 두려웠던 사람의 변화 사례 | 자신감, 발표불안, 행동변화 | 자기 대화를 바꾸는 3일 실천법 | 현재시제, 자기대화바꾸기, 루틴 | 3일 후 달라지는 선택과 현실 | 작은습관, 인생변화, 동기부여" [ref=e493]
+              - button "더보기" [ref=e498]
+        - generic [ref=e503]:
+          - link [ref=e505] [cursor=pointer]:
+            - /url: /watch?v=PMXYwC6kdrQ&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q
+          - generic [ref=e507] [cursor=pointer]:
+            - generic [ref=e508]:
+              - heading "[단단한 멘탈을 만들어주는 자기대화 2탄] 나 자신과 대화를 나누는 3가지 방법 2분 21초" [level=3] [ref=e510]:
+                - link "[단단한 멘탈을 만들어주는 자기대화 2탄] 나 자신과 대화를 나누는 3가지 방법 2분 21초" [ref=e511]:
+                  - /url: /watch?v=PMXYwC6kdrQ&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q
+                  - text: "[단단한 멘탈을 만들어주는 자기대화 2탄] 나 자신과 대화를 나누는 3가지 방법"
+              - generic [ref=e514]:
+                - generic [ref=e515]: 조회수 1천회
+                - generic [ref=e516]: •4년 전
+            - generic [ref=e517]:
+              - link "쌤콘 - 쌤을 위한 콘텐츠 채널로 이동" [ref=e518]:
+                - /url: /@%EC%8C%A4%EC%BD%98-%EC%8C%A4%EC%9D%84%EC%9C%84%ED%95%9C%EC%BD%98%ED%85%90%EC%B8%A0
+              - link "쌤콘 - 쌤을 위한 콘텐츠" [ref=e523]:
+                - /url: /@%EC%8C%A4%EC%BD%98-%EC%8C%A4%EC%9D%84%EC%9C%84%ED%95%9C%EC%BD%98%ED%85%90%EC%B8%A0
+            - generic [ref=e524]:
+              - generic [ref=e525]: 단단한 멘탈을 만들어주는 자기대화 2탄] 나 자신과 대화를 나누는 3가지 방법 단단한 멘탈을 위해 꼭 필요한 자기대화. 하지만 어떻게 ...
+              - tooltip "tooltip"
+        - generic [ref=e526]:
+          - generic [ref=e529]:
+            - img [ref=e531]
+            - heading "Shorts" [level=2] [ref=e534]
+          - generic [ref=e535]:
+            - generic [ref=e536]:
+              - generic [ref=e539]:
+                - link [ref=e540] [cursor=pointer]:
+                  - /url: /shorts/eFX6pWp63Ts
+                - generic [ref=e544] [cursor=pointer]:
+                  - link "하고싶은 말 다 하면서 존중받는 대화법" [ref=e545]:
+                    - /url: /shorts/eFX6pWp63Ts
+                  - generic [ref=e546]: 조회수 275만회
+                - button "추가 작업" [ref=e548] [cursor=pointer]
+              - generic [ref=e554]:
+                - link [ref=e555] [cursor=pointer]:
+                  - /url: /shorts/rkasanSSf7M
+                - generic [ref=e559] [cursor=pointer]:
+                  - link "자신을 객관적으로 마주하는 방법" [ref=e560]:
+                    - /url: /shorts/rkasanSSf7M
+                  - generic [ref=e561]: 조회수 11만회
+                - button "추가 작업" [ref=e563] [cursor=pointer]
+              - generic [ref=e569]:
+                - link [ref=e570] [cursor=pointer]:
+                  - /url: /shorts/l2Cp6zePlVo
+                - generic [ref=e574] [cursor=pointer]:
+                  - link "AI를 더 창의적으로 쓰는 대화 방식" [ref=e575]:
+                    - /url: /shorts/l2Cp6zePlVo
+                  - generic [ref=e576]: 조회수 1.6천회
+                - button "추가 작업" [ref=e578] [cursor=pointer]
+              - generic [ref=e584]:
+                - link [ref=e585] [cursor=pointer]:
+                  - /url: /shorts/OM4d8Zk6mu8
+                - generic [ref=e589] [cursor=pointer]:
+                  - link "대화 시작? 이 방법이 통했다!" [ref=e590]:
+                    - /url: /shorts/OM4d8Zk6mu8
+                  - generic [ref=e591]: 조회수 1.5천회
+                - button "추가 작업" [ref=e593] [cursor=pointer]
+              - generic [ref=e599]:
+                - link [ref=e600] [cursor=pointer]:
+                  - /url: /shorts/joxVMqTJvIQ
+                  - img [ref=e605]:
+                    - generic [ref=e606]: 새 동영상
+                - generic [ref=e607] [cursor=pointer]:
+                  - 'link "상대방의 마음을 얻는 대화의 기술, 핵심만 깔끔하게 말하기 #대화기술 #핵심말하기 #깔끔하게말하기" [ref=e608]':
+                    - /url: /shorts/joxVMqTJvIQ
+                  - generic [ref=e609]: 조회수 208회
+                - button "추가 작업" [ref=e611] [cursor=pointer]
+            - generic [ref=e615]:
+              - generic [ref=e618]:
+                - link [ref=e619] [cursor=pointer]:
+                  - /url: /shorts/A6t2bQspikI
+                  - img [ref=e624]:
+                    - generic [ref=e625]: 새 동영상
+                - generic [ref=e626] [cursor=pointer]:
+                  - link "무기력이 반복된다면, 먼저 이걸 알아야 합니다" [ref=e627]:
+                    - /url: /shorts/A6t2bQspikI
+                  - generic [ref=e628]: 조회수 587회
+                - button "추가 작업" [ref=e630] [cursor=pointer]
+              - generic [ref=e636]:
+                - link [ref=e637] [cursor=pointer]:
+                  - /url: /shorts/E7tONGzNFKc
+                  - img [ref=e642]:
+                    - generic [ref=e643]: 새 동영상
+                - generic [ref=e644] [cursor=pointer]:
+                  - link "혼자 있는걸 두려워 하는 이유" [ref=e645]:
+                    - /url: /shorts/E7tONGzNFKc
+                  - generic [ref=e646]: 조회수 1.2천회
+                - button "추가 작업" [ref=e648] [cursor=pointer]
+              - generic [ref=e654]:
+                - link [ref=e655] [cursor=pointer]:
+                  - /url: /shorts/6LNAE_ElBJs
+                - generic [ref=e659] [cursor=pointer]:
+                  - link "나는 왜 혼자 있고 싶으면서 외로울까요?" [ref=e660]:
+                    - /url: /shorts/6LNAE_ElBJs
+                  - generic [ref=e661]: 조회수 298회
+                - button "추가 작업" [ref=e663] [cursor=pointer]
+              - generic [ref=e669]:
+                - link [ref=e670] [cursor=pointer]:
+                  - /url: /shorts/TAhgczl24Vk
+                  - img [ref=e675]:
+                    - generic [ref=e676]: 새 동영상
+                - generic [ref=e677] [cursor=pointer]:
+                  - link "가장 좋은 대화 상대는, 결국 자기 자신이더라" [ref=e678]:
+                    - /url: /shorts/TAhgczl24Vk
+                  - generic [ref=e679]: 조회수 394회
+                - button "추가 작업" [ref=e681] [cursor=pointer]
+        - generic [ref=e686]:
+          - link [ref=e688] [cursor=pointer]:
+            - /url: /watch?v=4EOf3XWdUY8&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q
+          - generic [ref=e690] [cursor=pointer]:
+            - generic [ref=e691]:
+              - heading "일방통행 대화🙅 이렇게만 말씀하시면 반은 갑니다! 방송인 이금희의 「대화 잘하는 방법」 | 어쩌다어른 18분" [level=3] [ref=e693]:
+                - link "일방통행 대화🙅 이렇게만 말씀하시면 반은 갑니다! 방송인 이금희의 「대화 잘하는 방법」 | 어쩌다어른 18분" [ref=e694]:
+                  - /url: /watch?v=4EOf3XWdUY8&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q
+                  - text: 일방통행 대화🙅 이렇게만 말씀하시면 반은 갑니다! 방송인 이금희의 「대화 잘하는 방법」 | 어쩌다어른
+              - generic [ref=e697]:
+                - generic [ref=e698]: 조회수 114만회
+                - generic [ref=e699]: •1년 전
+            - generic [ref=e700]:
+              - link "tvN Joy 채널로 이동" [ref=e701]:
+                - /url: /@tvNJoy_official
+              - link "tvN Joy" [ref=e706]:
+                - /url: /@tvNJoy_official
+            - generic [ref=e707]:
+              - text: "티빙에서 스트리밍 : https://tving.onelink.me/xHqC/30a78d6f #tvN #어쩌다어른 #끌올 tvN 레전드 예능 끌어~ 올려↗↗ #티빙에서 ..."
+              - tooltip "tooltip"
+            - generic [ref=e710]:
+              - generic [ref=e711]:
+                - generic [ref=e714]: 요약
+                - button
+                - text: ·
+              - button "더보기" [ref=e719]
+        - generic [ref=e724]:
+          - link [ref=e726] [cursor=pointer]:
+            - /url: /watch?v=vkgLOGl0LQo&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q
+          - generic [ref=e728] [cursor=pointer]:
+            - generic [ref=e729]:
+              - 'heading "나와 혼자 대화를 하게된 이유, 그리고 깨달은 것. #소셜미디어 #성공하는법 6분 54초" [level=3] [ref=e731]':
+                - 'link "나와 혼자 대화를 하게된 이유, 그리고 깨달은 것. #소셜미디어 #성공하는법 6분 54초" [ref=e732]':
+                  - /url: /watch?v=vkgLOGl0LQo&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q
+                  - text: "나와 혼자 대화를 하게된 이유, 그리고 깨달은 것. #소셜미디어 #성공하는법"
+              - generic [ref=e735]:
+                - generic [ref=e736]: 조회수 2.3만회
+                - generic [ref=e737]: •6년 전
+            - generic [ref=e738]:
+              - link "드로우앤드류 채널로 이동" [ref=e739]:
+                - /url: /@drawandrew
+              - generic [ref=e740]:
+                - link "드로우앤드류" [ref=e744]:
+                  - /url: /@drawandrew
+                - img "인증됨" [ref=e749]
+            - generic [ref=e751]:
+              - generic [ref=e752]: 나와 대화를 한다는건 살면서 꼭 필요한 일같아요. 여러분도 이번주말 하루 정도 시간을 내어서 자기자신과 이야기하는 시간을 갖어 ...
+              - tooltip "tooltip"
+        - generic [ref=e754]:
+          - link [ref=e756] [cursor=pointer]:
+            - /url: /watch?v=BCyPSuiqDEk&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q
+          - generic [ref=e758] [cursor=pointer]:
+            - generic [ref=e759]:
+              - heading "혼자 있는 게 편하다는 사람들의 진짜 속마음ㅣ지식인초대석 EP.65 (박재연 소장 2부) 29분" [level=3] [ref=e761]:
+                - link "혼자 있는 게 편하다는 사람들의 진짜 속마음ㅣ지식인초대석 EP.65 (박재연 소장 2부) 29분" [ref=e762]:
+                  - /url: /watch?v=BCyPSuiqDEk&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q
+                  - text: 혼자 있는 게 편하다는 사람들의 진짜 속마음ㅣ지식인초대석 EP.65 (박재연 소장 2부)
+              - generic [ref=e765]:
+                - generic [ref=e766]: 조회수 43만회
+                - generic [ref=e767]: •9개월 전
+            - generic [ref=e768]:
+              - link "지식인사이드 채널로 이동" [ref=e769]:
+                - /url: /@%EC%A7%80%EC%8B%9D%EC%9D%B8%EC%82%AC%EC%9D%B4%EB%93%9C
+              - generic [ref=e770]:
+                - link "지식인사이드" [ref=e774]:
+                  - /url: /@%EC%A7%80%EC%8B%9D%EC%9D%B8%EC%82%AC%EC%9D%B4%EB%93%9C
+                - img "인증됨" [ref=e779]
+            - generic [ref=e781]:
+              - generic [ref=e782]: 오늘은 리플러스 인간연구소 박재연 소장님을 모시고 불편한 상황을 피하기만 하는 사람들의 심리에 대해서 알아보았습니다. 영상이 ...
+              - tooltip "tooltip"
+            - generic [ref=e785]:
+              - generic [ref=e786]:
+                - generic [ref=e790]: 챕터 10
+                - button "인트로 | 구독자 인사 | 싸우기 싫어서 도망치는 회피형 인간의 속마음 | 회피형 연인을 대하는 현명한 방법 | 무너진 자존감은 이 순서로 회복됩니다 | 부모 사랑 못 받고 자란 어른들을 위한 해법 | 외로움이 삶에 긍정적인 2가지 이유 | 자존감 갉아먹는 직장 상사 대처하는 법 | 조직 리더들이 외우고 다녀야 할 3가지 문장 | 절대로 ‘시간’이 해결해 주지 않는 인간관계" [ref=e791]
+              - button "더보기" [ref=e796]
+        - generic [ref=e801]:
+          - link [ref=e803] [cursor=pointer]:
+            - /url: /watch?v=Qhfz525cRTs&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q
+          - generic [ref=e805] [cursor=pointer]:
+            - generic [ref=e806]:
+              - 'heading "뭘 해도 행복한 사람과 불만인 사람의 말버릇 | 박재연 리플러스 인간연구소 소장 #대화 #관계 #심리 | 세바시 인생질문 186회 23분" [level=3] [ref=e808]':
+                - 'link "뭘 해도 행복한 사람과 불만인 사람의 말버릇 | 박재연 리플러스 인간연구소 소장 #대화 #관계 #심리 | 세바시 인생질문 186회 23분" [ref=e809]':
+                  - /url: /watch?v=Qhfz525cRTs&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q
+                  - text: "뭘 해도 행복한 사람과 불만인 사람의 말버릇 | 박재연 리플러스 인간연구소 소장 #대화 #관계 #심리 | 세바시 인생질문 186회"
+              - generic [ref=e812]:
+                - generic [ref=e813]: 조회수 1117만회
+                - generic [ref=e814]: •4년 전
+            - generic [ref=e815]:
+              - link "세바시 인생질문 채널로 이동" [ref=e816]:
+                - /url: /@LifeQuestion_sebasi
+              - link "세바시 인생질문" [ref=e821]:
+                - /url: /@LifeQuestion_sebasi
+            - generic [ref=e822]:
+              - text: 뭘 해도 긍정적이고 행복한 사람들이 있죠. 옆에 있는 것만으로도 긍정 에너지를 퍼뜨리는 사람들! 반면에 뭘 해도 불평 불만이 끊이질 ...
+              - tooltip "tooltip"
+            - generic [ref=e825]:
+              - generic [ref=e826]:
+                - generic [ref=e830]: 챕터 10
+                - 'button "INTRO | 뭘 해도 행복한 사람들의 말 습관 | 행복한 사람은 타고난 걸까? | 죽음학의 두 가지 명제: 한계성 유한성 | 트라우마를 남기는 사건의 특징 | 트라우마 떨쳐내고 행복해지는 법 | 뭘 해도 불만인 사람들의 특징 | 사람들의 말을 꼬아 듣지 않으려면 | 인간의 모든 말은 부탁(Please) 아니면 감사(Thank you)다 | ‘상처 준 사람''은 없다?" [ref=e831]'
+              - button "더보기" [ref=e836]
+        - generic [ref=e841]:
+          - link [ref=e843] [cursor=pointer]:
+            - /url: /watch?v=ejbwHthBKek&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q
+          - generic [ref=e845] [cursor=pointer]:
+            - generic [ref=e846]:
+              - heading "자신감이 떨어져 본 적이 없는 나의 인생 철학, 삶의 태도 9분 36초" [level=3] [ref=e848]:
+                - link "자신감이 떨어져 본 적이 없는 나의 인생 철학, 삶의 태도 9분 36초" [ref=e849]:
+                  - /url: /watch?v=ejbwHthBKek&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q
+                  - text: 자신감이 떨어져 본 적이 없는 나의 인생 철학, 삶의 태도
+              - generic [ref=e852]:
+                - generic [ref=e853]: 조회수 36만회
+                - generic [ref=e854]: •11개월 전
+            - generic [ref=e855]:
+              - link "코햄 KoreanHamster 채널로 이동" [ref=e856]:
+                - /url: /@korean_hamster
+              - link "코햄 KoreanHamster" [ref=e861]:
+                - /url: /@korean_hamster
+            - generic [ref=e862]:
+              - text: 내가 특별한 존재가 아니고 그럴 이유도 없다는 걸 깨닫는 순간 마음이 편해지는 매직 삶은 소름끼치게 짧고 나는 먼지일 뿐인걸~ 내 ...
+              - tooltip "tooltip"
+            - generic [ref=e865]:
+              - generic [ref=e866]:
+                - generic [ref=e869]: 요약
+                - button
+                - text: ·
+              - button "더보기" [ref=e874]
+        - generic [ref=e879]:
+          - link [ref=e881] [cursor=pointer]:
+            - /url: /watch?v=WvX4hDBkFiE&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q
+          - generic [ref=e883] [cursor=pointer]:
+            - generic [ref=e884]:
+              - 'heading "(Kor, Chi) 최초공개 자이언티의 고백, 자기비하의 끝에서 배운 나를 사랑하는 법 | 자이언티 뮤지션, 스탠다드프렌즈 대표 | #연민 #성장 #가수 | 세바시 1993회 15분" [level=3] [ref=e886]':
+                - 'link "(Kor, Chi) 최초공개 자이언티의 고백, 자기비하의 끝에서 배운 나를 사랑하는 법 | 자이언티 뮤지션, 스탠다드프렌즈 대표 | #연민 #성장 #가수 | 세바시 1993회 15분" [ref=e887]':
+                  - /url: /watch?v=WvX4hDBkFiE&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q
+                  - text: "(Kor, Chi) 최초공개 자이언티의 고백, 자기비하의 끝에서 배운 나를 사랑하는 법 | 자이언티 뮤지션, 스탠다드프렌즈 대표 | #연민 #성장 #가수 | 세바시 1993회"
+              - generic [ref=e890]:
+                - generic [ref=e891]: 조회수 92만회
+                - generic [ref=e892]: •11개월 전
+            - generic [ref=e893]:
+              - link "세바시 강연 Sebasi Talk 채널로 이동" [ref=e894]:
+                - /url: /@sebasi15
+              - link "세바시 강연 Sebasi Talk" [ref=e899]:
+                - /url: /@sebasi15
+            - generic [ref=e900]:
+              - generic [ref=e901]: 자기 미움을 자기 사랑으로 바꾼 힘 | 세바시 1993회 자이언티 뮤지션, 스탠다드프렌즈 대표 강연 소개 자이언티는 오랫동안 자신을 ...
+              - tooltip "tooltip"
+            - img "자막" [ref=e906]:
+              - generic [ref=e907]: 자막
+            - generic [ref=e910]:
+              - generic [ref=e911]:
+                - generic [ref=e914]: 요약
+                - button
+                - text: ·
+              - button "더보기" [ref=e919]
+        - generic [ref=e924]:
+          - link [ref=e926] [cursor=pointer]:
+            - /url: /watch?v=HPR1QOzTxj8&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q
+          - generic [ref=e928] [cursor=pointer]:
+            - generic [ref=e929]:
+              - heading "\"지금 혼자인 사람 들어오세요.\"🙋🏻‍♂️ 혼자인 삶에 대한 진솔한 대화 (그린룸 팟캐스트 ep.01) 1시간 10분" [level=3] [ref=e931]:
+                - link "\"지금 혼자인 사람 들어오세요.\"🙋🏻‍♂️ 혼자인 삶에 대한 진솔한 대화 (그린룸 팟캐스트 ep.01) 1시간 10분" [ref=e932]:
+                  - /url: /watch?v=HPR1QOzTxj8&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q
+                  - text: "\"지금 혼자인 사람 들어오세요.\"🙋🏻‍♂️ 혼자인 삶에 대한 진솔한 대화 (그린룸 팟캐스트 ep.01)"
+              - generic [ref=e935]:
+                - generic [ref=e936]: 조회수 3.3만회
+                - generic [ref=e937]: •5개월 전
+            - generic [ref=e938]:
+              - link "드로우앤드류 채널로 이동" [ref=e939]:
+                - /url: /@drawandrew
+              - generic [ref=e940]:
+                - link "드로우앤드류" [ref=e944]:
+                  - /url: /@drawandrew
+                - img "인증됨" [ref=e949]
+            - generic [ref=e951]:
+              - generic [ref=e952]: 타임라인 00:00 인트로 01:30 오늘의 주제 '혼자인 삶' 03:19 1인 가구 1000만 시대 04:14 혼자가 편한 사람들이 많아진 이유 05:50 ...
+              - tooltip "tooltip"
+            - img "자막" [ref=e957]:
+              - generic [ref=e958]: 자막
+            - generic [ref=e961]:
+              - generic [ref=e962]:
+                - generic [ref=e966]: 챕터 25
+                - button "인트로 | 오늘의 주제 '혼자인 삶' | 1인 가구 1000만 시대 | 혼자가 편한 사람들이 많아진 이유 | 혼자인 삶에 대한 부정적인 시선 | 싱글인 사람들이 자주 듣는 말 | 나홀로족의 속마음 | 혼자일 때 외로움 | 혼자인게 편한 사람은 사람을 싫어한다? | 혼자일 때 행복한 순간 | 사람이 그리운 순간 | 작년 크리스마스 썰 | 혼자 시간을 잘보냈던 날 | 혼자여도 외롭지 않으려면 | 프리랜서인데 같이 일하는 이유 | 혼자일 때 절대 하면 안되는 것 | 지루함을 견디기 어려운 시대 | 외로움을 다루는 법 | 혼자인 시간의 필요성 | 산책을 많이 하는 이유 | 혼자 일하는 프리랜서의 장단점 | 프리랜서의 자유엔 책임이 따른다 | 나와의 약속을 지키키 어려운 이유 | 루틴을 지켜주는 장치들 | 마무리" [ref=e967]
+              - button "더보기" [ref=e972]
+        - generic [ref=e977]:
+          - link [ref=e979] [cursor=pointer]:
+            - /url: /watch?v=oe9qKfQUBHw&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q
+          - generic [ref=e981] [cursor=pointer]:
+            - generic [ref=e982]:
+              - heading "자기 자신과 대화하는 법 | 불교 명상의 가르침 10분 39초" [level=3] [ref=e984]:
+                - link "자기 자신과 대화하는 법 | 불교 명상의 가르침 10분 39초" [ref=e985]:
+                  - /url: /watch?v=oe9qKfQUBHw&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q
+                  - text: 자기 자신과 대화하는 법 | 불교 명상의 가르침
+              - generic [ref=e988]:
+                - generic [ref=e989]: 조회수 1회
+                - generic [ref=e990]: •6개월 전
+            - generic [ref=e991]:
+              - link "느린 하루 기록소 채널로 이동" [ref=e992]:
+                - /url: /@%EB%8A%90%EB%A6%B0%ED%95%98%EB%A3%A8%EA%B8%B0%EB%A1%9D%EC%86%8C
+              - link "느린 하루 기록소" [ref=e997]:
+                - /url: /@%EB%8A%90%EB%A6%B0%ED%95%98%EB%A3%A8%EA%B8%B0%EB%A1%9D%EC%86%8C
+            - generic [ref=e998]:
+              - text: "불교 #불교명언 #불교이야기 #불교 명상 #석가모니 일생 #석가모니 말씀 #석가모니 명언 \"외로움을 없애지 마세요. 그 자리에 앉혀 ..."
+              - tooltip "tooltip"
+        - generic [ref=e1000]:
+          - link [ref=e1002] [cursor=pointer]:
+            - /url: /watch?v=mwc3B9G7Qiw&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q
+          - generic [ref=e1004] [cursor=pointer]:
+            - generic [ref=e1005]:
+              - heading "대화가 자꾸 끊어지는 사람들이 말할 때 꼭 넣는 단어ㅣ지식인초대석 EP.15 (박재연 소장 1부) 33분" [level=3] [ref=e1007]:
+                - link "대화가 자꾸 끊어지는 사람들이 말할 때 꼭 넣는 단어ㅣ지식인초대석 EP.15 (박재연 소장 1부) 33분" [ref=e1008]:
+                  - /url: /watch?v=mwc3B9G7Qiw&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q
+                  - text: 대화가 자꾸 끊어지는 사람들이 말할 때 꼭 넣는 단어ㅣ지식인초대석 EP.15 (박재연 소장 1부)
+              - generic [ref=e1011]:
+                - generic [ref=e1012]: 조회수 418만회
+                - generic [ref=e1013]: •1년 전
+            - generic [ref=e1014]:
+              - link "지식인사이드 채널로 이동" [ref=e1015]:
+                - /url: /@%EC%A7%80%EC%8B%9D%EC%9D%B8%EC%82%AC%EC%9D%B4%EB%93%9C
+              - generic [ref=e1016]:
+                - link "지식인사이드" [ref=e1020]:
+                  - /url: /@%EC%A7%80%EC%8B%9D%EC%9D%B8%EC%82%AC%EC%9D%B4%EB%93%9C
+                - img "인증됨" [ref=e1025]
+            - generic [ref=e1027]:
+              - generic [ref=e1028]: 오늘은 대한민국 대표 대화 전문가 박재연 소장님님을 모시고 자존감 낮을 때 대화에서 드러나는 말버릇에 대해서 알아보았습니다.
+              - tooltip "tooltip"
+            - generic [ref=e1031]:
+              - generic [ref=e1032]:
+                - generic [ref=e1036]: 챕터 11
+                - button "인트로 | 구독자 인사 | 유독 남의 말을 꼬아듣기만 하는 사람의 특징 | 자존감 높은 사람만 대답할 수 있는 3가지 질문 | 자존감 낮은 사람들이 SNS에서 꼭 하는 행동 | 가진 것 없이도 자존감 높아지는 2가지 방법 | 대화가 자꾸 끊어지는 사람들이 사용하는 6가지 말버릇 | 생각만 해도 속이 꽉 막히는 가족들과 대화하는 법 | 배우자에게 열등감 안 느끼고 자존감 높은 사람의 말버릇 | 진짜 친구와 가짜 친구를 가려내는 대화 | 가족, 친구라는 이름으로 돈 빌려달라는 사람 거절하는 법" [ref=e1037]
+              - button "더보기" [ref=e1042]
+        - generic [ref=e1047]:
+          - link [ref=e1049] [cursor=pointer]:
+            - /url: /watch?v=waYQcNmYgIo&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q
+          - generic [ref=e1051] [cursor=pointer]:
+            - generic [ref=e1052]:
+              - heading "남들에게 존중받는 사람과 무시당하는 사람의 결정적인 1가지 차이 ㅣ 책과사람 Ep. 09 김경일 교수 1부 22분" [level=3] [ref=e1054]:
+                - link "남들에게 존중받는 사람과 무시당하는 사람의 결정적인 1가지 차이 ㅣ 책과사람 Ep. 09 김경일 교수 1부 22분" [ref=e1055]:
+                  - /url: /watch?v=waYQcNmYgIo&pp=ygUh7J6Q6riwIOyekOyLoOqzvOydmCDrjIDtmZQg7Zi87J6Q
+                  - text: 남들에게 존중받는 사람과 무시당하는 사람의 결정적인 1가지 차이 ㅣ 책과사람 Ep. 09 김경일 교수 1부
+              - generic [ref=e1058]:
+                - generic [ref=e1059]: 조회수 191만회
+                - generic [ref=e1060]: •1년 전
+            - generic [ref=e1061]:
+              - link "책과삶 채널로 이동" [ref=e1062]:
+                - /url: /@%EC%B1%85%EA%B3%BC%EC%82%B6
+              - generic [ref=e1063]:
+                - link "책과삶" [ref=e1067]:
+                  - /url: /@%EC%B1%85%EA%B3%BC%EC%82%B6
+                - img "인증됨" [ref=e1072]
+            - generic [ref=e1074]:
+              - generic [ref=e1075]: 안녕하세요."책과삶" 입니다. 오늘은 김경일 교수님과 모든 사람에게 잘 보이고 싶은 사람에 대해 알아봤습니다. 세상의 모든 감동과 ...
+              - tooltip "tooltip"
+            - generic [ref=e1078]:
+              - generic [ref=e1079]:
+                - generic [ref=e1083]: 챕터 9
+                - button "오프닝 | 자기소개 | 인간관계에서 매번 손해보는 사람들 특징 | 모든 사람들한테 존중받고 싶어하는 사람들의 특징 | “그냥 내가 참고 말지” 싫은 애기 못하는 사람 특징 | 존중만 받고 싶어하는 사람들이 자주 만나는 인간유형 | 과거 아픔을 이기고 사람들에게 존중받는 방법 | 무례한 사람을 만났을 때 ‘이렇게’ 대처하세요 | 부모가 지나치게 집착하는 자녀는 커서 ‘이렇게’ 됩니다" [ref=e1084]
+              - button "더보기" [ref=e1089]
