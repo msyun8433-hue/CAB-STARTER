@@ -1,4 +1,5 @@
 export default {
   testEnvironment: 'jsdom',
-  transformIgnorePatterns: ['/node_modules/'],
+  transform: {},
+  moduleFileExtensions: ['js', 'mjs', 'cjs', 'jsx', 'ts', 'tsx', 'json', 'node'],
 };

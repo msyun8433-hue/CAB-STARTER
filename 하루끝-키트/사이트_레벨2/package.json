@@ -9,7 +9,8 @@
   },
   "devDependencies": {
     "jest": "^29.0.0",
-    "jest-environment-jsdom": "^29.0.0"
+    "jest-environment-jsdom": "^29.0.0",
+    "playwright": "^1.61.1"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.106.0",

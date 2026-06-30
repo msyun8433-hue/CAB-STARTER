@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- CAB 3주차 · 대시보드 자동화 마인드맵
+     세션 현황판(하루끝 대시보드)의 ①~⑦ 전체 파이프라인을 자동화하는 설계
+     입력(상태/재료)부터 출력(발행)까지 AI가 어디까지 자동으로 해줄지 명시 -->
+<opml version="2.0">
+  <head>
+    <title>CAB 3주차 · 대시보드 자동화 (하루끝 현황판)</title>
+  </head>
+  <body>
+    <outline text="CAB 3주차 · 대시보드 자동화">
+
+      <outline text="무엇을 입력하는가?">
+        <outline text="뭐가 들어오면 시작?">
+          <outline text="① 상태 입력: 윤미선이 '어떤 상태로 세션을 만들 건지' 선택 (예: 텅빈저녁, 멍한주말오후)"/>
+          <outline text="② 재료 입력: 유튜브 자막·기사·인터뷰·책 발췌 텍스트 또는 URL"/>
+          <outline text="선택지: '폼 입력' 또는 '파일 감지' 또는 '구글시트 자동 읽기'"/>
+        </outline>
+        <outline text="어디서 들어오나?">
+          <outline text="폼 입력: 웹 대시보드의 '새 세션' 폼 (상태 선택 + 재료 텍스트 붙여넣기)"/>
+          <outline text="파일 감지: 자료함/ 폴더에 파일이 떨어지면 자동 감지"/>
+          <outline text="구글시트: 공유 시트의 '세션 큐' 탭 읽어서 자동 시작"/>
+          <outline text="저장소: Supabase sessions 테이블 (대기 중인 상태들)"/>
+        </outline>
+      </outline>
+
+      <outline text="AI가 뭘 판단하나?">
+        <outline text="Claude가 대신 해줄 것">
+          <outline text="② 재료 모으기: 텍스트에서 '세션에 맞는 핵심 구절·질문·통찰' 추출"/>
+          <outline text="③ 질문지·과제: 재료에서 '윤미선의 톤'으로 대면 질문 5개 + 기록 과제 3개 생성"/>
+          <outline text="④ 대본 초안: 세션 흐름(인트로→질문읽기→침묵→다음)에 맞춘 녹음 대본 작성"/>
+          <outline text="⑤ AI티 빼기: 생성된 대본에서 기계 말투·번역투·금지어 제거 (결다듬기 자동 실행)"/>
+          <outline text="⑥ 결 점검(일부): 금지어·거울·톤 자동 검증 + 사람이 최종 승인"/>
+        </outline>
+        <outline text="사람이 할 것">
+          <outline text="① 상태 선택: 윤미선이 세션 테마/상태 결정"/>
+          <outline text="⑥ 최종 결 점검: AI 검증 후 윤미선이 '발행 승인' 클릭"/>
+          <outline text="⑦ 녹음·발행: 윤미선이 최종 텍스트를 읽고 목소리로 녹음"/>
+        </outline>
+      </outline>
+
+      <outline text="결과는 어떤 게 나오나?">
+        <outline text="무엇이 만들어지나?">
+          <outline text="정리된 재료 문서 (markdown)"/>
+          <outline text="질문지 (PDF 템플릿에 자동 삽입)"/>
+          <outline text="대본 초안 (md + 구글문서로도 동시 저장)"/>
+          <outline text="AI티 제거된 최종 대본 (검수 대기)"/>
+          <outline text="현황판 리스트 (세션별 진도 막대 실시간 갱신)"/>
+        </outline>
+        <outline text="어디에 저장?">
+          <outline text="구조화된 데이터: Supabase sessions·materials·scripts 테이블"/>
+          <outline text="파일 결과물: 하루끝-키트/outputs/ 폴더 (자동 생성)"/>
+          <outline text="구글 동기화: 공유 드라이브 '하루끝-키트'에 폴더별 자동 백업"/>
+          <outline text="웹 현황판: 현황판.html 자동 재생성 (매번 입력 후 30초 내)"/>
+        </outline>
+      </outline>
+
+      <outline text="사람이 꼭 봐야하나?">
+        <outline text="바깥으로 나가는 것인가?">
+          <outline text="아직 바깥 아님: ①~⑥은 모두 내부 대시보드에서만 동작 (발행 전)"/>
+          <outline text="발행 시점: ⑦ 녹음이 올라오면 '사이트에 공개' = 바깥으로 나감"/>
+          <outline text="따라서 ⑥ 최종 점검이 필수 (윤미선이 반드시 보고 클릭해야 함)"/>
+        </outline>
+        <outline text="검수 요구사항">
+          <outline text="AI 생성 → 사람 검수 (윤미선의 손을 거쳐야 함)"/>
+          <outline text="④ 대본 + ⑤ AI티 제거 결과물을 윤미선이 읽어보고 수정 가능하게 둘 것"/>
+          <outline text="⑥ 승인 버튼을 눌러야만 다음 단계(녹음)로 진행"/>
+        </outline>
+      </outline>
+
+      <outline text="언제 도나? (트리거)">
+        <outline text="언제 발동하는지">
+          <outline text="수동 트리거: 윤미선이 대시보드에서 '+ 새 세션' 클릭 → 폼 제출 → 즉시 시작"/>
+          <outline text="또는 파일 감지: 자료함에 새 파일 떨어지면 → 5초 후 자동 시작"/>
+          <outline text="또는 정해진 시각: 매주 월요일 09:00에 '기본 세션 템플릿'으로 자동 생성?"/>
+        </outline>
+        <outline text="어떻게 작동하는가">
+          <outline text="내 PC(로컬) 하에서: Node.js 스크립트 (watch + MCP 클로드 호출) — 항상 켜둬야 함"/>
+          <outline text="클라우드(노트북 꺼도) 하에서: Vercel Cron + API (추천) — 정해진 시각마다 자동 실행, 항상 켜둘 필요 없음"/>
+          <outline text="하이브리드: Supabase 웹훅 + Edge Function — 폼 제출 감지 → 자동 호출"/>
+        </outline>
+      </outline>
+
+      <outline text="내 구조 어디에 붙나?">
+        <outline text="대시보드에서 작동하는 구조">
+          <outline text="입구: 현황판.html에 '+ 새 세션 시작' 버튼 추가"/>
+          <outline text="폼: 모달 팝업 (상태 선택 드롭다운 + 재료 텍스트 영역)"/>
+          <outline text="제출 후: Supabase로 저장 → 클로드 MCP 호출 → 30초 내 ②~⑤ 자동 생성"/>
+          <outline text="결과 표시: 현황판 새로고침 (진도 막대·카운트·색상 즉시 업데이트)"/>
+        </outline>
+        <outline text="워커가 어느 단계에서 어떻게 작동">
+          <outline text="② 재료 모으기 워커: Claude Opus (재료 추출) — Supabase 백그라운드 작업"/>
+          <outline text="③ 질문지 워커: Claude Sonnet (질문 5개·과제 3개 생성) — 윤미선의 톤 프롬프트 내장"/>
+          <outline text="④ 대본 워커: Claude Sonnet (세션 흐름 따라 대본 작성)"/>
+          <outline text="⑤ AI티 제거 워커: humanize-korean 스킬 또는 결다듬기 + Claude (자동)"/>
+          <outline text="⑥ 점검 워커: 자동 검증(금지어·거울 체크) + 사람 수동 승인"/>
+        </outline>
+      </outline>
+
+      <outline text="다음에 뭘 개선?">
+        <outline text="1차 MVP (지금)">
+          <outline text="① 상태 + ② 재료 입력 폼 구축"/>
+          <outline text="② ~⑤ Claude 자동 생성 (각 단계별 프롬프트 고정)"/>
+          <outline text="⑥ 사람이 '승인' 버튼만 클릭"/>
+          <outline text="⑦ 녹음·발행은 여전히 수동 (나중에)"/>
+        </outline>
+        <outline text="의도대로 안 나올 때">
+          <outline text="질문지가 뜸하거나 반복됨 → 프롬프트 '다양성' 항목 추가"/>
+          <outline text="대본이 너무 길거나 짧음 → 세션별 시간(10분/15분) 파라미터 추가"/>
+          <outline text="AI티가 다 안 빠짐 → humanize-korean 적용 범위 확대 또는 결다듬기 2회차 실행"/>
+          <outline text="현황판 갱신이 느림 → 단계별 병렬 처리 (동시에 2개 이상 작동)"/>
+        </outline>
+        <outline text="2차 개선 (나중)">
+          <outline text="⑦ 녹음 자동화: TTS + 윤미선 목소리 클로닝 또는 수동 녹음 감지 후 자동 업로드"/>
+          <outline text="반복 질문 제거: 지난 세션 데이터 학습 → 이번엔 다른 질문 우선순위"/>
+          <outline text="톤 커스터마이징: 세션별 톤 설정 (상담형·질문형·심화형 등)"/>
+        </outline>
+      </outline>
+
+    </outline>
+  </body>
+</opml>

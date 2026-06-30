@@ -9,7 +9,21 @@
 *.pem
 client_secret*.json
 .playwright-mcp/client-secret-*.json
-gws-backup/client_secret.json
+gws-backup/
+
+# 브라우저 자동조작(Playwright) 화면 기록 — 쓰레기, 올리지 않음
+.playwright-mcp/
+creds.yml
+api-lib.yml
+keyform.yml
+kf2.yml
+create-proj.yml
+key-dialog.png
+key-result.png
+
+# 임시 파일
+**/_tmp_*.mjs
+_tmp_*
 
 # 로컬 작업·캐시
 .DS_Store

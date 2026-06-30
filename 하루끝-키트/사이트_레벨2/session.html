@@ -48,6 +48,12 @@
   .savebar{font-size:14px; padding:10px 14px; border-radius:10px; margin:0 0 16px; display:flex; align-items:center; gap:8px;}
   .savebar.ok{background:#eef2e8; color:#566b41; border:1px solid #d8e0c8;}
   .savebar.warn{background:#fbeee6; color:#9a5a35; border:1px solid #f0d6c2;}
+  .top-nav{border-bottom:1px solid var(--line); background:#fff; position:sticky; top:0; z-index:100;}
+  .top-nav .wrap{display:flex; gap:0; padding:0 22px;}
+  .top-nav a{padding:18px 22px; text-decoration:none; color:var(--muted); font-size:14px; border-bottom:2px solid transparent; transition:all .2s;}
+  .top-nav a:hover{color:var(--soft);}
+  .top-nav a.active{color:var(--ink); border-bottom-color:var(--accent);}
+
   .thanks{display:none; background:#f1ede4; border-radius:14px; padding:26px; text-align:center; color:var(--soft); line-height:2;}
   .end{color:var(--soft); font-size:16px; line-height:2.1; margin:6px 0 26px; text-align:center;}
   footer{padding:40px 0 70px; text-align:center; color:var(--muted); font-size:14px;}
@@ -60,9 +66,22 @@
   details.fold:not([open])>summary .chev::after{content:"펼치기 +";}
   details.fold[open]>summary .chev::after{content:"접기 −";}
   details.fold .inner{padding:2px 2px 18px;}
+  .tab-nav{display:flex; gap:0; border-bottom:1px solid var(--line); margin:32px 0 0;}
+  .tab-btn{padding:16px 24px; font-size:15px; font-weight:600; border:none; background:none; cursor:pointer; color:var(--muted); transition:all .2s;}
+  .tab-btn:hover{color:var(--soft);}
+  .tab-btn.active{color:var(--accent); border-bottom:2px solid var(--accent); margin-bottom:-1px;}
+  .tab-content{display:none;}
+  .tab-content.active{display:block;}
 </style>
 </head>
 <body>
+<nav class="top-nav">
+  <div class="wrap">
+    <a href="session.html" class="active">기록하기</a>
+    <a href="admin.html">관리자</a>
+    <a href="mypage.html">나의 페이지</a>
+  </div>
+</nav>
 <div class="wrap">
 
   <header class="hero">
@@ -79,6 +98,14 @@
     </div>
   </section>
 
+  <!-- 탭 네비게이션 -->
+  <nav class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('write')">✍️ 기록하기</button>
+    <button class="tab-btn" onclick="switchTab('mirror')">🪞 거울 보기</button>
+  </nav>
+
+  <!-- 탭 1: 기록하기 -->
+  <div id="write-tab" class="tab-content active">
   <!-- 워크북 먼저 (곁에 두고 듣기) -->
   <section>
     <h2>먼저, 워크북을 곁에 둡니다</h2>
@@ -186,11 +213,51 @@
       <input type="text" name="연락처" placeholder="연락받을 곳 (이메일/카톡)">
     </div>
     <div style="height:14px"></div>
-    <button type="submit" class="btn primary">보내기</button>
+    <div class="downloads">
+      <button type="submit" class="btn primary" id="sendBtn">보내기</button>
+    </div>
   </section>
   </form>
+  </div><!-- /write-tab -->
 
-  <section id="mirror-section" style="display:none; border:none"></section>
+  <!-- 탭 2: 거울 보기 -->
+  <div id="mirror-tab" class="tab-content">
+  <section style="padding-top:0;">
+    <div class="notice" style="margin-bottom:18px">
+      지금까지 받은 거울 글들이 여기 표시됩니다.
+    </div>
+  </section>
+
+  <section id="mirror-section-history" style="border-top:1px solid var(--line);">
+    <div id="mirrors-list"></div>
+  </section>
+  </div><!-- /mirror-tab -->
+
+  <section id="mirror-section" style="display:none; border:none">
+    <div id="draft-prompt" style="display:none">
+      <h2>초안 프롬프트</h2>
+      <div class="notice" style="margin-bottom:18px">
+        아래 프롬프트를 복사하고, 터미널에서 <code>claude -p "..."</code> 로 실행한 후, 결과를 붙여넣으세요.
+      </div>
+      <div class="track">
+        <button type="button" class="btn line" id="copyPromptBtn">📋 프롬프트 복사</button>
+      </div>
+      <textarea id="prompt-text" readonly style="min-height:180px; background:#f9f7f2; color:var(--muted)"></textarea>
+
+      <div style="margin-top:20px">
+        <h3 style="font-size:18px; margin:0 0 12px">또는 결과를 여기 붙여넣기</h3>
+        <textarea id="mirror-draft" placeholder="claude -p 실행 결과를 여기 붙여넣으세요"></textarea>
+        <button type="button" class="btn primary" id="approveBtn" style="margin-top:12px">✓ 승인</button>
+      </div>
+    </div>
+
+    <div id="mirror-display" style="display:none">
+      <h2>당신의 거울 글</h2>
+      <div class="track" style="border-left:4px solid var(--accent); background:#faf7f2">
+        <div id="mirror-text" style="white-space:pre-wrap; line-height:1.9"></div>
+      </div>
+    </div>
+  </section>
 
   <section style="border:none">
     <div class="thanks" id="thanks">
@@ -277,10 +344,8 @@
     }
   })();
 
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    submitAndShowMirror();
-  });
+  // 폼 제출(보내기) 처리는 mirror-functions.js 한 곳에서만 한다.
+  // (여기서 또 등록하면 한 번 눌러도 두 번 전송되어 중복 저장됨)
 </script>
 </body>
 </html>
